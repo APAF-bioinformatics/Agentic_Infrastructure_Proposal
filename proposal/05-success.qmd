@@ -1,22 +1,17 @@
-# Success
-<!--
-Projects should have a definition of done that is measurable, and a
-thorough understanding going in of what the risks are to delivery
--->
+# Success and Sustainability
 
-## Definition of done
-<!--
-What does success look like?
--->
+The success of the HydraR infrastructure project will be measured by its adoption, technical stability, and contribution to the R ecosystem's AI readiness.
 
-## Measuring success
-<!--
-How will we know when success is achieved, what markers can we use
-along the way
--->
+## Success Metrics
+- **Package Adoption**: At least 3 existing R/Bioconductor packages demonstrating "Skill Node" integration via the HydraR manifest protocol.
+- **Reliability Benchmark**: A published reproducible benchmark dataset showing a >20% improvement in agent task completion rates when using HydraR state management vs. stateless alternatives.
+- **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model.
+- **CRAN/Bioconductor Presence**: Maintain the 0-error/warning/note status across all major R versions.
 
-## Future work
-<!--
-How could this be extended / developed in the future by yourself
-and/or the community in general?
--->
+## Sustainability Plan
+HydraR is backed by **APAF Bioinformatics** (at Macquarie University), ensuring long-term institutional support and alignment with national-scale bioinformatics infrastructure (NCRIS). 
+- **Code Governance**: The project follows strict linting, automated testing, and semantic versioning.
+- **Commercial & Institutional Support**: Ongoing maintenance is built into the APAF digital transformation roadmap (2026-2030).
+- **Open Source Community**: By providing an interoperable manifest protocol, we encourage a "plugin" ecosystem where community members can contribute drivers and skill nodes without needing deep knowledge of the core DAG engine, ensuring the framework outlives its original funding period.
+
+<!-- APAF Bioinformatics | proposal/05-success.qmd | Approved | 2026-04-16 -->

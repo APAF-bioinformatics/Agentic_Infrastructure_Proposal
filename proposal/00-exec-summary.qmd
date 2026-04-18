@@ -1,6 +1,24 @@
 # Executive Summary
 
-<!--
-This section provides a condensed view of the entire proposal, one page long.
-It should be a comprehensive high-level overview that captures the essence of the proposal, including its goals, methods, expected outcomes, deliverables, and budget.
--->
+**HydraR: High-Performance Agentic Infrastructure for Reproducible Scientific Research**
+
+The rapid adoption of Large Language Models (LLMs) in software development has created a critical gap in the R ecosystem: the lack of **hardened, reproducible orchestration infrastructure**. While many R packages provide wrappers for individual AI APIs, few provide the lifecycle management, state persistence, and autonomous auditability required for rigorous scientific practice.
+
+**HydraR** is a high-performance framework designed to bridge this gap. Built on R6 architecture and backed by DuckDB and Git Worktree isolation, HydraR treats the entire agentic journey as a first-class, version-controlled object.
+
+### Goals
+This proposal seeks **$14,400 USD** to transform HydraR into a **community-wide infrastructure hub** for AI-driven R development. Our primary objectives are:
+
+1. **Ecosystem Interoperability**: Establishing "R-Agent Manifests" for core ecosystems (Bioconductor, CRAN, Nextflow) and integrating state-of-the-art sandbox technologies (Docker, Singularity, Apptainer).
+2. **Autonomous Persistence**: Finalizing our native, agent-aware hashing and restart capabilities, supported by DuckDB persistent memory, to handle long-running scientific workflows safely.
+3. **Advanced AI Preparedness**: Implementing network plasticity, growth, pruning, validation, and dynamic network repair at the DAG orchestration layer.
+
+### Expected Outcomes
+- A standardized agentic execution environment bridging R components with tools like targets, nextflow, and Docker.
+- Advanced retry, hashing, and recovery systems to protect iterative AI workloads.
+- Robust execution separation and API key security.
+
+### Budget Overview
+Total Request: **$14,400 USD**. Converted to AUD (~1.39 exchange rate), this provides around $20,000 AUD, funding approximately **100 hours** of expert developer time (at $200 AUD/hr) over a rapid 3-month sprint.
+
+<!-- APAF Bioinformatics | proposal/00-exec-summary.qmd | Approved | 2026-04-17 -->

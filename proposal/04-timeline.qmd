@@ -1,60 +1,48 @@
-# Project plan
+# Timeline
 
-## Start-up phase
-<!--
-Covering the planning phase, this section should provide a relatively
-detailed plan of how work will start on the project. This section is
-important because projects need to get up and running quickly.
+The proposed work amounts to roughly **100 hours** of expert developer time, structured as a focused **3-month period**.
 
+## Gantt Chart
 
- - [ ] Setting up collaboration platform inc. code for contributors etc.
- - [ ] License decisions
- - [ ] Reporting framework
--->
+```{mermaid}
+gantt
+    title HydraR 3-Month Development Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %m/%y
+    
+    section Infrastructure
+    Restart checkpt & DuckDB memory       :active, dev1, 2026-05-01, 25d
+    Dynamic Network Repair & Validation   :dev2, after dev1, 20d
+    Keys Security (SSH agent)             :dev3, after dev2, 10d
+    
+    section Sandboxing
+    Docker Integration                    :dev4, 2026-05-15, 20d
+    Git worktree in Docker                :dev5, after dev4, 15d
+    Singularity & Apptainer               :dev6, after dev5, 20d
+    
+    section Interoperability
+    Ellmer, Mall, Targets & Reticulate    :dev7, 2026-06-01, 15d
+    Nextflow Interoperability             :dev8, after dev7, 20d
+    BioConductor / CRAN support           :dev9, after dev8, 20d
+    
+    section Management
+    Agents & Skills Management            :dev10, 2026-07-01, 15d
+    Documentation, Hardening & Release    :dev11, after dev10, 15d
+```
 
+## Phase 1: Infrastructure & Sandboxing (Month 1)
+- Finalization of native restart checkpointing, DuckDB persistence, and object hashing logic.
+- Implementation of API Key Security bounds using SSH agents.
+- Core Docker integration with preliminary git worktree structuring.
 
-## Technical delivery
-<!--
-Covering the actual delivery of the project this section should
-provide at least a high-level description of the implementation.
+## Phase 2: Interoperability & Network Repair (Month 2)
+- Formal deployment of Dynamic Network Repair and preparedness features (growth, pruning).
+- Interoperability tests binding HydraR to Nextflow, `targets`, `ellmer`, and `mall`.
+- Emulation and build compatibility mapping for Singularity and Apptainer environments.
 
-Including target dates is really important as you need to be committed
-and the ISC need to have a means of tracking delivery
--->
+## Phase 3: Community, Bioconductor & Agents Lifecycle (Month 3)
+- Reticulate interface mappings, alongside deep BioConductor and CRAN system-call handlers.
+- Finalization of Agents and Skills Management tools into lifecycle modules.
+- Refactoring, bug fixing, documentation generation, and release processing.
 
-## Other aspects
-
-<!--
-How will you ensure that your work is available to the widest number
-of people? Please specify the open-source or creative commons license(s)
-you will use, how you will host your code so that others can contribute,
-and how you will publicize your work. We encourage you to plan content
-to be shared quarterly on the R Consortium blog.
-
- - [ ] Announcement post
- - [ ] Delivery blog post
- - [ ] Social media
- - [ ] UseR!
- - [ ] ISC meetings
--->
-
-## Budget & funding plan
-
-<!--
-Note that the maximum grant is $20k USD. The proposal should be in USD.
-
-Outline the milestones for development and how much funding will be
-required for each stage (as payments will be tied to project milestone
-completion). This also helps the ISC in the event of partial funding. 
-Each milestone should specify the work to be done and the
-expected outcomes, providing enough detail for the ISC to understand
-the scope of the project work and assess the likelihood of success.
-
-We expect that most of the budget will be allocated
-for labor costs. We do not cover indirect costs. The ISC grants cannot
-cover such things as travel, lodging, food, journal publication fees,
-or personal hardware. Cloud services may be covered if they are specific
-to the project and the project period. The ISC reserves the right to vet
-how funds are used for each project separately. If in doubt, please reach
-out to us.
--->
+<!-- APAF Bioinformatics | proposal/04-timeline.qmd | Approved | 2026-04-17 -->

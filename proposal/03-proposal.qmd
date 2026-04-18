@@ -1,50 +1,42 @@
-# The proposal
-<!--
-How are you going to solve the problem? Include the concrete actions you
-will take and an estimated timeline. What are likely failure modes and
-how will you recover from them?
+# The Proposal
 
-This is where the proposal should be outlined.
--->
+We propose to evolve **HydraR** into a foundational infrastructure hub that standardizes agentic workflows for the R community. This grant focuses on transformative enhancements spanning infrastructure preparedness, interoperability, and AI capabilities.
 
-## Overview
-<!--
-At a high-level address what your proposal is and how it will address
-the problem identified. Highlight any benefits to the R Community that
-follow from solving the problem. This should be your most compelling
-section.
+## 1. Core Infrastructure & AI Preparedness
+Agentic workflows require resilience against system and API failures. We will introduce **Dynamic Network Repair** and **Network Plasticity**, allowing the execution DAG to organically prune or grow nodes and re-validate workflows on the fly. 
+We will finalize our **Native Restart Checkpointing** mechanism. Currently, we employ hashing of output files and memory objects directly to DuckDB to pause and restart pipelines seamlessly without recalculating unchanged data. 
+To enhance agent operation flexibility, we are also preparing **Native Reticulate** integrations to access the Python AI ecosystem natively alongside our target wrappers `ellmer` and `mall`. 
 
-Include concrete actions you will take and estimated timeline.
--->
+## 2. Advanced Security & Sandbox Execution
+Security and reproducible environments are paramount for computational biology. We will augment our execution runtime with **API Key Security via SSH agents** to ensure LLM keys never leak. 
+To isolate untrusted agentic logic actions, we will implement environment wrappers for native sandboxes:
+- **Docker Integration** utilizing Git worktree configurations inside containers.
+- **Singularity and Apptainer** support tailored for HPC clusters structure.
 
-## Detail
-<!--
-Go into more detail about the specifics of the project and how it delivers
-against the problem.
+## 3. Ecosystem Interoperability
+This project aims to bridge HydraR with established frameworks. We will finalize hooks for **Nextflow**, **targets**, and construct core abstractions facilitating **Bioconductor and CRAN** package integration. We also propose full lifecycle implementations of **Agents and Skills Management** architectures to natively transfer, manage, and discover agent capabilities securely.
 
-Depending on project type the detail section should include:
--->
+## Features Possibly Included (Alpha Integrations)
 
-### Minimum Viable Product
+Specific cutting-edge agentic features have already been conceptualized and initially developed within a private environment. These will be integrated and verified in the public repository throughout the grant:
 
-<!--
-What is the smallest thing you can build that delivers value to your users?
--->
+*   **Restart checkpointing**: Native pipeline serialization techniques mapping direct to `on_failure`. (Priority)
+*   **Hashing**: Intelligent tracking of output files and objects linked with state retrieval capabilities. (Priority)
+*   **DuckDB Memory**: Low latency memory vectors replacing flat-file logging arrays. (Priority)
+*   **Docker Integration**: Encapsulated system running nodes inside Docker. (Second priorty)
+*   **Keys Security**: Delegating API keys using secure SSH agents. (Second priorty)
+*   **Ecosystem Bindings**: Direct bindings into `ellmer`, `mall`, and integration handlers for `targets`.
+*   **Dynamic Network Repair**: Self-correcting network flows bridging our autopoietic models.
+*   **Network Preparedness**: Growth, pruning, validation layers for dynamic infrastructure updates natively interacting.
+*   **Native Reticulate**: Expanding LLM integrations effortlessly to complex python agent hubs.
 
-### Architecture
+## To Be Implemented
 
-<!--
-What does the high-level architecture look like?
--->
+The requested development time targets completing and expanding these infrastructures with:
 
-### Assumptions
+*   Isolation parity using **Singularity and Apptainer** (fundamental in supercomputing and NCI scaling). (Priority)
+*   Robust **Git worktree logic within Docker** mounts preserving strict state tracking across restarts.
+*   Deep automated **Interoperability with Nextflow** using standardized config generations.
+*   Seamless integrations specifically mapped into **BioConductor and CRAN** packages.
 
-<!--
-What assumptions are you making that, if proven false, would invalidate the project?
--->
-
-### External dependencies
-
-<!--
-What external dependencies does the project have (e.g. libraries, services, other projects, etc.)?
--->
+<!-- APAF Bioinformatics | proposal/03-proposal.qmd | Approved | 2026-04-17 -->

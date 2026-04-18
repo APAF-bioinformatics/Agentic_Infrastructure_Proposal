@@ -1,32 +1,19 @@
 # Signatories
-<!--
-This section provides the ISC with a view of the support received from
-the community for a proposal. Acceptance isn't predicated on
-popularity but community acceptance is important. Willingness to
-accept outside input is also a good marker for project delivery.
-
-An optional section would be for R-Core signatories where changes to R
-are proposed.
--->
 
 ## Project team
-<!--
-Who are the people responsible for actually delivering the project if
-the proposal gets accepted and are already signed up and rearing to
-go? Briefly describe all participants and the skills they will bring
-to the project.
--->
+
+- **Chi Nam (Ignatius) Pang** ([ORCID: 0000-0001-9703-5741](https://orcid.org/0000-0001-9703-5741)). **Co-Primary Investigator**. Senior Bioinformatician at Macquarie University / Australian Proteome Analysis Facility (APAF). Expert in R package development, proteomics pipelines, and reproducibility standards.
+- **Aidan Tay** ([ORCID: 0000-0003-1315-4896](https://orcid.org/0000-0003-1315-4896)). **Co-Primary Investigator (Co-CI)**. Bioinformatician at APAF. Architect of the HydraR R6 DAG engine, Git Worktree isolation logic, and the custom state-hashing persistence Layer.
 
 ## Contributors
-<!--
-Who are the people who have actively helped with this proposal but
-won't necessarily be on the core project team later?
--->
+
+- **APAF Bioinformatics Team**: Provided the testing ground for initial prototypes in high-throughput proteomics and metabolomics research.
+- **Antigravity AI**: Agentic assistant used during the rapid prototyping and documentation hardening phase of the project (as disclosed in `agents.md`).
 
 ## Consulted
-<!--
-Who has been given the opportunity to provide feedback on the
-proposal? This should include any R Consortium & ISC members who the
-proposal has been discussed with.
--->
+
+- **rOpenSci Editorial Board**: Initial discussions regarding HydraR's role in the AI-R ecosystem.
+- **Bioplatforms Australia (BPA)**: Consulted on the impact of agentic orchestration for national-scale omics infrastructure.
+
+<!-- APAF Bioinformatics | proposal/01-signatories.qmd | Approved | 2026-04-16 -->
 

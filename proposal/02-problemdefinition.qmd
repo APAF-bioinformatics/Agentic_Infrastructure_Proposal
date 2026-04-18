@@ -4,21 +4,18 @@ bibliography: references.bib
 
 # The Problem
 
-```{=html}
-<!--
-Outlining the issue / weak point / problem to be solved by this
-proposal. This should be a compelling section that sets the reader up
-for the next section - the proposed solution!
+Large Language Models (LLMs) are fundamentally transforming how R users write code and analyze data. However, the current landscape of AI tools in R faces three critical challenges that threaten the integrity of scientific research:
 
-It is important to cover:
+1. **The "Black Box" Workflow**: Most AI integrations are interactive and ephemeral. A user asks an LLM for code, runs it, and moves on. The logic behind the LLM's sequence of choices is lost, making the resulting analysis impossible to fully reproduce or audit.
+2. **Orchestration Complexity**: As workflows move from "single prompt" to "multi-agent pipelines" (e.g., an agent writes code, an auditor checks it, a bioinformatician approves it), researchers are forced to write fragile, boilerplate orchestration code. This "orchestration debt" leads to race conditions, circular dependencies, and lost state.
+3. **Environment Fragility**: AI agents that modify code or files can inadvertently corrupt the working directory. Without isolation (like Git Worktrees), running parallel agentic tasks on a research project is dangerous.
 
- - [ ] What the problem is
- - [ ] Who it affects
- - [ ] Why is it a problem
- - [ ] What will solving the problem enable (why should it be solved)
- - [ ] Brief summary of existing work and previous attempts (e.g., relevant R packages)
- - [ ] If proposing changes to R itself: letter of support from R Core member
--->
-```
+### Who it Affects
+This problem affects the entire R community, but most acutely impact **computational biologists, statisticians, and data scientists** in regulated industries (e.g., clinical trials, NATA-accredited labs) where traceability is non-negotiable.
 
-An example in-text citation [@wickham2016].
+### Existing Work
+Current solutions like `llm` (Python), `langgraph` (Python), or R-specific wrappers like `ellmer` and `mall` focus primarily on the **Execution Layer** (sending prompts and parsing responses). They lack a dedicated **Orchestration and Persistence Layer** that treats the entire agentic journey as a first-class, version-controlled object.
+
+HydraR solves this by providing the **Technical Infrastructure** necessary for traceable, stateful AI orchestration.
+
+<!-- APAF Bioinformatics | proposal/02-problemdefinition.qmd | Approved | 2026-04-16 -->
