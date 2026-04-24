@@ -5,4 +5,46 @@ Good form for support of grant proposal.
     - Proteomics -> Bioinformatics -> Broader R community (Who to target / focus?)
     (Set this up).
 
-Timeline - 
+
+$14,400 ~ $20,000 AUD @ $1 USD ~$1.39 AUD
+$20,000 ~ 368.3329435143014 hrs @ $54.2987 AUD/hr
+368.33 hrs ~ 52 days @ 7 hrs/day
+52 days ~ 2 months.
+
+
+Reproducibility
+    Traceability / Explainability
+    Repeatability
+    Auditability
+
+    Modularity / Future-proof
+        Not being tied to API
+
+    Multi-language support - This is just a harness for R
+
+    Mermaid diagram - Repeatable and auditable
+        Generic way of defining workflows.
+
+    Container
+        Github worktree
+        Commit back to repo
+
+    Container
+        Git merge all worktrees
+
+⚖️ Why HydraR? (Statement of Need)
+Standard agentic frameworks often rely heavily on brittle API wrappers and volatile state. HydraR addresses three fundamental challenges in scientific AI orchestration:
+
+🔍 Auditability: It maintains a central memory system that continuously saves workflow checkpoints (using a DuckDB database), ensuring a complete, verifiable record of all AI interactions and data changes.
+🛡️ Filesystem Safety: By leveraging Git worktrees, HydraR creates temporary, isolated project branches for each agent working in parallel. This prevents file corruption and race conditions when multiple tasks run simultaneously.
+🏗️ Portable Workflows: By defining agent logic using standard YAML files and Mermaid.js diagrams, HydraR separates the workflow's design from the code that runs it. This text-based blueprint acts as an "OpenAPI for Agents"—a shareable format that is easy to audit and version-control.
+
+📖 Glossary of Technical Terms
+To help researchers from different backgrounds, here are the key technical terms used in HydraR:
+
+Agent: An autonomous AI entity (powered by an LLM) that can perform specific tasks or make decisions.
+Workflow: A collection of tasks (nodes) linked together to achieve a larger goal.
+DAG (Directed Acyclic Graph): A mathematical structure used to represent workflows where tasks move in a specific direction without looping back infinitely.
+State Machine: A system that keeps track of its current "status" and moves between states based on inputs or task results.
+Checkpointing: The process of saving the entire state of a workflow to a database so it can be resumed later if interrupted.
+Git Worktree: A specialized Git feature that allows HydraR to create a separate, temporary version of your project for an agent to work in, preventing them from overwriting your main files accidentally.

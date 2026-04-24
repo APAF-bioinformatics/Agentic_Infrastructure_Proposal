@@ -18,3 +18,8 @@ vignettes/*.pdf
 *.pdf
 
 /.quarto/
+
+**/*.quarto_ipynb
+
+.conda
+environment.yml

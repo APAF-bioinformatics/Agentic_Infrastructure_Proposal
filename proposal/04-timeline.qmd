@@ -1,48 +1,72 @@
 # Timeline
 
-The proposed work amounts to roughly **100 hours** of expert developer time, structured as a focused **3-month period**.
+## Start-up Phase
 
-## Gantt Chart
+* **[ ] Reporting Framework**: Establish a bi-weekly internal review process to track milestone progress.
+
+## Technical Delivery
+
+The proposed work will be delivered over a 10-week period and involve approximately 360 hours of expert developer time. The work is structured into three phases:
+
+* **Phase 1: Memory and State Management (Weeks 1-4)**:
+  * Development of automated state persistence and restart checkpointing.
+  * Development of the serialization engine.
+  * Development of dynamic sub-graph injection for self-correcting flows.
+  * Development of the validation and pruning layers for network preparedness.
+
+* **Phase 2: Environment Management (Weeks 5-8)**:
+  * Development of Docker Integration
+  * Development of Git worktree for state tracking in containers
+  * Development of compatibility mapping for Singularity and Apptainer
+
+* **Phase 3: Validation & Community Management (Weeks 9-10)**:
+  * Finalization of Agents and Skills Management tools into lifecycle modules.
+  * Documentation, bug fixing, and release processing.
 
 ```{mermaid}
 gantt
-    title HydraR 3-Month Development Timeline
+    title HydraR 10-Week Development Timeline
     dateFormat  YYYY-MM-DD
     axisFormat  %m/%y
     
-    section Infrastructure
-    Restart checkpt & DuckDB memory       :active, dev1, 2026-05-01, 25d
-    Dynamic Network Repair & Validation   :dev2, after dev1, 20d
-    Keys Security (SSH agent)             :dev3, after dev2, 10d
+    section Memory and State Management
+    Restart Checkpointing                   :active, dev1, 2026-05-01, 6d
+    Intelligent Hashing and State Retrieval :dev2, after dev1, 6d
+    Dynamic Network Repair & Validation     :dev3, after dev2, 6d
+
+    section Environment Management
+    Docker Integration                      :dev4, after dev3, 6d
+    Git worktree in Docker                  :dev5, after dev4, 6d
+    Singularity & Apptainer                 :dev6, after dev5, 6d
     
-    section Sandboxing
-    Docker Integration                    :dev4, 2026-05-15, 20d
-    Git worktree in Docker                :dev5, after dev4, 15d
-    Singularity & Apptainer               :dev6, after dev5, 20d
-    
-    section Interoperability
-    Ellmer, Mall, Targets & Reticulate    :dev7, 2026-06-01, 15d
-    Nextflow Interoperability             :dev8, after dev7, 20d
-    BioConductor / CRAN support           :dev9, after dev8, 20d
-    
-    section Management
-    Agents & Skills Management            :dev10, 2026-07-01, 15d
-    Documentation, Hardening & Release    :dev11, after dev10, 15d
+    section Validation & Community Management
+    Agents & Skills Management              :dev7, after dev6, 6d
+    Documentation & Release                 :dev8, after dev7, 6d
 ```
 
-## Phase 1: Infrastructure & Sandboxing (Month 1)
-- Finalization of native restart checkpointing, DuckDB persistence, and object hashing logic.
-- Implementation of API Key Security bounds using SSH agents.
-- Core Docker integration with preliminary git worktree structuring.
+## Other Aspects
 
-## Phase 2: Interoperability & Network Repair (Month 2)
-- Formal deployment of Dynamic Network Repair and preparedness features (growth, pruning).
-- Interoperability tests binding HydraR to Nextflow, `targets`, `ellmer`, and `mall`.
-- Emulation and build compatibility mapping for Singularity and Apptainer environments.
+* **Hosting**: Code will be hosted on GitHub under the `APAF-bioinformatics` organization.
+* **Conference**: We will attend and present HydraR at relevant conferences to engage with the bioinformatics community.
+* **Social media**: We will utilize social media to engage with the bioinformatics community. 
+* **Publicity**: We will share quarterly updates on the R Consortium blog.
+* **Community Engagement**: We will share undergo the rOpenSci peer-review process and transition to a community-maintained model.
 
-## Phase 3: Community, Bioconductor & Agents Lifecycle (Month 3)
-- Reticulate interface mappings, alongside deep BioConductor and CRAN system-call handlers.
-- Finalization of Agents and Skills Management tools into lifecycle modules.
-- Refactoring, bug fixing, documentation generation, and release processing.
+## Budget & Funding Plan
 
-<!-- APAF Bioinformatics | proposal/04-timeline.qmd | Approved | 2026-04-17 -->
+Total requested budget: **$14,400 USD**. We request funding for expert software developers to work on this project over a 10-week period (approximately 360 hours).
+
+| Milestone                             | Description              | Estimated Hours | Funding     |
+| :---                                  | :---                     | :---:           | ---:        |
+| **Memory and State Management**       | [Details of Milestone 1] | 140             | $5,760      |
+| **Environment Management**            | [Details of Milestone 2] | 140             | $5,760      |
+| **Validation & Community Management** | [Details of Milestone 3] | 80              | $2,880      |
+| **Total**                             |                          | **360**         | **$14,400** |
+
+|                                   | **R Consortium** | **Macquarie University** |
+|                                   | **Cash (USD)**   | **In-kind**              |
+| :---                              | ---:             | ---:                     |
+| Aidan Tay (1.0 FTE)               | $14,400          | -                        |
+| Chi Nam (Ignatius) Pang (0.2 FTE) | -                | ??                       |
+| Developer (0.2 FTE)               | -                | ??                       |
+| Total                             | **$14,400**      | ??                       |

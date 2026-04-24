@@ -1,17 +1,40 @@
-# Success and Sustainability
+# Success
 
 The success of the HydraR infrastructure project will be measured by its adoption, technical stability, and contribution to the R ecosystem's AI readiness.
 
 ## Success Metrics
-- **Package Adoption**: At least 3 existing R/Bioconductor packages demonstrating "Skill Node" integration via the HydraR manifest protocol.
-- **Reliability Benchmark**: A published reproducible benchmark dataset showing a >20% improvement in agent task completion rates when using HydraR state management vs. stateless alternatives.
-- **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model.
-- **CRAN/Bioconductor Presence**: Maintain the 0-error/warning/note status across all major R versions.
 
-## Sustainability Plan
+* **Package Adoption**: At least 3 existing R/Bioconductor packages demonstrating "Skill Node" integration via the HydraR manifest protocol.
+* **Reliability Benchmark**: A published reproducible benchmark dataset showing a >20% improvement in agent task completion rates when using HydraR state management vs. stateless alternatives.
+* **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model.
+* **CRAN/Bioconductor Presence**: Maintain the 0-error/warning/note status across all major R versions.
+
+## Definition of Done
+
+The project will be considered successful upon the delivery of:
+
+* A stable CRAN-ready (or Bioconductor-ready) R package named `HydraR`.
+* A fully functional "Checkpoint & Resume" engine demonstrated in a multi-agent bioinformatics workflow.
+* The capability to perform SQL queries over agent reasoning history via an integrated DuckDB backend.
+* Comprehensive documentation, including at least three "reproducible case studies" (vignettes) showcasing traceable agent orchestration.
+
+## Measuring success
+
+We will use the following markers to track our progress:
+* **Month 2**: Completion of the `duckdb` backend and successful hashing of R objects in a session.
+* **Month 4**: Passing unit tests for state serialization and automated recovery from simulated API failures.
+* **Month 6**: Successful community beta-test with at least 5 bioinformatics researchers.
+* **Month 8**: Final project report and publication of the demonstration blog post on the R Consortium website.
+
+## Future work
+
 HydraR is backed by **APAF Bioinformatics** (at Macquarie University), ensuring long-term institutional support and alignment with national-scale bioinformatics infrastructure (NCRIS). 
-- **Code Governance**: The project follows strict linting, automated testing, and semantic versioning.
-- **Commercial & Institutional Support**: Ongoing maintenance is built into the APAF digital transformation roadmap (2026-2030).
-- **Open Source Community**: By providing an interoperable manifest protocol, we encourage a "plugin" ecosystem where community members can contribute drivers and skill nodes without needing deep knowledge of the core DAG engine, ensuring the framework outlives its original funding period.
 
-<!-- APAF Bioinformatics | proposal/05-success.qmd | Approved | 2026-04-16 -->
+* **Commercial & Institutional Support**: Ongoing maintenance is built into the APAF digital transformation roadmap (2026-2030).
+* **Open Source Community**: By providing an interoperable manifest protocol, we encourage a "plugin" ecosystem where community members can contribute drivers and skill nodes without needing deep knowledge of the core DAG engine, ensuring the framework outlives its original funding period.
+
+HydraR is designed to be the foundation for an "Autopoietic Agentic Ecosystem" in R. Future development directions include:
+
+*   **Decentralized Orchestration**: Extending the infrastructure to support peer-to-peer agent coordination across distributed R nodes.
+*   **Advanced Containerization**: Tighter integration with Docker/Singularity for "Secure Execution Enclaves" where agents can test code in isolated environments.
+*   **Agentic Benchmarking**: A standardized suite for benchmarking LLM performance on bioinformatics-specific R tasks using the HydraR traceability layer.

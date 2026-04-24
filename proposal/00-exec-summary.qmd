@@ -1,24 +1,30 @@
 # Executive Summary
 
-**HydraR: High-Performance Agentic Infrastructure for Reproducible Scientific Research**
+Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous "agents" that can plan and execute complex tasks that previously demanded computational expertise, and powerful multi-agent systems, where a team of AI agents can autonomously collaborate with one another to tackle multi-faceted problems. By democratizing access to these sophisticated multi-agent systems, this automation not only accelerates biological discovery but also empowers the broader scientific community to harness high-performance workflows once restricted to deep domain specialists.
 
-The rapid adoption of Large Language Models (LLMs) in software development has created a critical gap in the R ecosystem: the lack of **hardened, reproducible orchestration infrastructure**. While many R packages provide wrappers for individual AI APIs, few provide the lifecycle management, state persistence, and autonomous auditability required for rigorous scientific practice.
+Yet despite offering many great benefits, the current R ecosystem lacks a robust framework for traceable, stateful, and secure agent orchestration. Because of this, multi-agent systems poses a significant risk to the reproducibility of R-based scientific research. Thus, to safeguard the integrity of R-based research, a robust framework must exist to support the development and reproducible use of agentic systems.
 
-**HydraR** is a high-performance framework designed to bridge this gap. Built on R6 architecture and backed by DuckDB and Git Worktree isolation, HydraR treats the entire agentic journey as a first-class, version-controlled object.
+To address this critical need, this project will build upon **HydraR**, an existing R package dedicated to the scientific reproducibility of agentic systems. Specifically, this project aims to deliver a robust framework for traceable, stateful and secure agent orchestration. To accomplish this, we will develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions into auditable records for peer review and regulatory compliance. We will also develop a native container layer to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments. Thus, by serving as the central hub for traceable, stateful and secure agentic orchestration, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.
 
 ### Goals
-This proposal seeks **$14,400 USD** to transform HydraR into a **community-wide infrastructure hub** for AI-driven R development. Our primary objectives are:
 
-1. **Ecosystem Interoperability**: Establishing "R-Agent Manifests" for core ecosystems (Bioconductor, CRAN, Nextflow) and integrating state-of-the-art sandbox technologies (Docker, Singularity, Apptainer).
-2. **Autonomous Persistence**: Finalizing our native, agent-aware hashing and restart capabilities, supported by DuckDB persistent memory, to handle long-running scientific workflows safely.
-3. **Advanced AI Preparedness**: Implementing network plasticity, growth, pruning, validation, and dynamic network repair at the DAG orchestration layer.
+This project aims to transform HydraR into a foundational infrastructure hub that standardizes agentic workflows for the R community, by developing a production-grade framework that treats agent workflows as verifiable, recoverable sessions. We aim to empower R users to deploy complex multi-agent systems with the same level of auditable precision expected in traditional computational pipelines.
 
-### Expected Outcomes
-- A standardized agentic execution environment bridging R components with tools like targets, nextflow, and Docker.
-- Advanced retry, hashing, and recovery systems to protect iterative AI workloads.
-- Robust execution separation and API key security.
+### Methods
 
-### Budget Overview
-Total Request: **$14,400 USD**. Converted to AUD (~1.39 exchange rate), this provides around $20,000 AUD, funding approximately **100 hours** of expert developer time (at $200 AUD/hr) over a rapid 3-month sprint.
+We will leverage high-performance technologies, including DuckDB for low-latency state management and native serialization for fault-tolerant checkpointing. Our approach incorporates cryptographic hashing for data provenance and "autopoietic" self-correcting network flows to ensure autonomous research remains within safe, validated boundaries.
 
-<!-- APAF Bioinformatics | proposal/00-exec-summary.qmd | Approved | 2026-04-17 -->
+### Expected Outcomes (Deliverables?)
+
+1. **HydraR R Package**: A comprehensive toolkit for building stateful agentic graphs.
+2. **Resilience Layer**: A native checkpointing system to minimize failure costs.
+3. **Audit Logs**: Structured, SQL-queryable records of all agent reasoning and tool interactions.
+4. **Community Resources**: Documentation and vignettes demonstrating reproducible workflows for the R Consortium.
+
+### Budget
+
+Total requested budget: **$14,400 USD**. We request funding for expert software developers to work on this project over a 10-week period (approximately 360 hours).
+
+# Executive Summary
+
+HydraR is a high-performance R infrastructure designed to bring scientific rigor and reproducibility to the field of Large Language Model (LLM) orchestration. As autonomous agents become central to bioinformatics research, the R community lacks the tools to ensure these systems are traceable, stateful, and secure. HydraR addresses this gap by implementing a robust "Agentic Infrastructure" layer.
