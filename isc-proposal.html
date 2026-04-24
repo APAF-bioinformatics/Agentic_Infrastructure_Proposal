@@ -5087,10 +5087,10 @@ z-index: 1000;
   <li><a href="#the-proposal" id="toc-the-proposal" class="nav-link" data-scroll-target="#the-proposal"><span class="header-section-number">4</span> The Proposal</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">4.1</span> Overview</a></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details"><span class="header-section-number">4.2</span> Details</a></li>
-  <li><a href="#objective-1-memory-and-state-management" id="toc-objective-1-memory-and-state-management" class="nav-link" data-scroll-target="#objective-1-memory-and-state-management"><span class="header-section-number">4.3</span> Objective 1: Memory and State Management</a>
+  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details"><span class="header-section-number">4.2</span> Details</a>
   <ul class="collapse">
-  <li><a href="#objective-2-environment-management" id="toc-objective-2-environment-management" class="nav-link" data-scroll-target="#objective-2-environment-management"><span class="header-section-number">4.3.1</span> Objective 2: Environment Management</a></li>
+  <li><a href="#objective-1-memory-and-state-management" id="toc-objective-1-memory-and-state-management" class="nav-link" data-scroll-target="#objective-1-memory-and-state-management"><span class="header-section-number">4.2.1</span> Objective 1: Memory and State Management</a></li>
+  <li><a href="#objective-2-environment-management" id="toc-objective-2-environment-management" class="nav-link" data-scroll-target="#objective-2-environment-management"><span class="header-section-number">4.2.2</span> Objective 2: Environment Management</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline"><span class="header-section-number">5</span> Timeline</a>
@@ -5098,7 +5098,12 @@ z-index: 1000;
   <li><a href="#start-up-phase" id="toc-start-up-phase" class="nav-link" data-scroll-target="#start-up-phase"><span class="header-section-number">5.1</span> Start-up Phase</a></li>
   <li><a href="#technical-delivery" id="toc-technical-delivery" class="nav-link" data-scroll-target="#technical-delivery"><span class="header-section-number">5.2</span> Technical Delivery</a></li>
   <li><a href="#other-aspects" id="toc-other-aspects" class="nav-link" data-scroll-target="#other-aspects"><span class="header-section-number">5.3</span> Other Aspects</a></li>
-  <li><a href="#budget-funding-plan" id="toc-budget-funding-plan" class="nav-link" data-scroll-target="#budget-funding-plan"><span class="header-section-number">5.4</span> Budget &amp; Funding Plan</a></li>
+  <li><a href="#budget-funding-plan" id="toc-budget-funding-plan" class="nav-link" data-scroll-target="#budget-funding-plan"><span class="header-section-number">5.4</span> Budget &amp; Funding Plan</a>
+  <ul class="collapse">
+  <li><a href="#milestone-1-memory-and-state-management" id="toc-milestone-1-memory-and-state-management" class="nav-link" data-scroll-target="#milestone-1-memory-and-state-management"><span class="header-section-number">5.4.1</span> Milestone 1: Memory and State Management</a></li>
+  <li><a href="#milestone-2-environment-management" id="toc-milestone-2-environment-management" class="nav-link" data-scroll-target="#milestone-2-environment-management"><span class="header-section-number">5.4.2</span> Milestone 2: Environment Management</a></li>
+  <li><a href="#milestone-3-validation-community-management-approximately-105-hours" id="toc-milestone-3-validation-community-management-approximately-105-hours" class="nav-link" data-scroll-target="#milestone-3-validation-community-management-approximately-105-hours"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management (approximately 105 hours)</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#success" id="toc-success" class="nav-link" data-scroll-target="#success"><span class="header-section-number">6</span> Success</a>
   <ul class="collapse">
@@ -5199,9 +5204,8 @@ z-index: 1000;
 <section id="details" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="details"><span class="header-section-number">4.2</span> Details</h2>
 <p>This project aims to address the critical need for traceable, stateful, and secure agent orchestration in the R ecosystem. To do this, we will extend on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. In particular, we aim to address this gap through two objectives:</p>
-</section>
-<section id="objective-1-memory-and-state-management" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="objective-1-memory-and-state-management"><span class="header-section-number">4.3</span> Objective 1: Memory and State Management</h2>
+<section id="objective-1-memory-and-state-management" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="objective-1-memory-and-state-management"><span class="header-section-number">4.2.1</span> Objective 1: Memory and State Management</h3>
 <p><strong>Aim</strong>: To develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions into auditable records for peer review and regulatory compliance.</p>
 <p><strong>Rationale</strong>: Agent memory is often ephermeral and untraceable, making it difficult to capture and audit the entire “journey” of an agentic workflow. Currently, HydraR uses DuckDB to maintain a central memory system that continuously saves workflow checkpoints, ensuring a complete, verifiable record of all AI interactions and data changes. Despite this, HydraR does not support automated retries for failed tasks, execution caching and state retreival for skipping duplicated tasks and resource optimization, or agent validation for workflow resilience, which are essential for production-grade bioinformatic pipelines.</p>
 <p><strong>Approach</strong>: To develop a comprehensive memory and state management system, we will introduce several enhancements to HydraR:</p>
@@ -5210,8 +5214,9 @@ z-index: 1000;
 <li><p><strong>Execution Caching and State Retrieval</strong>: We will implement a content-addressable storage (CAS) model for all agent-generated artifacts. By hashing output files and R objects, and linking them to specific states and reasoning paths, HydraR can maintain a complete audit trail of how each artifact was generated, allowing the system to “skip” previously executed tasks and “resume” from any point in the workflow.</p></li>
 <li><p><strong>Agent Validation and Recovery</strong>: We will implement a system to automatically validate agent outputs. Thus, if the output of an agent fails to validate (e.g., malformed code or incorrect data schema), the orchestration engine can dynamically inject a “repair” to diagnose and rectify the error, ensuring the main research flow continues safely and autonomously.</p></li>
 </ul>
-<section id="objective-2-environment-management" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="objective-2-environment-management"><span class="header-section-number">4.3.1</span> Objective 2: Environment Management</h3>
+</section>
+<section id="objective-2-environment-management" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="objective-2-environment-management"><span class="header-section-number">4.2.2</span> Objective 2: Environment Management</h3>
 <p><strong>Aim</strong>: To develop an environment management system to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments.</p>
 <p><strong>Rationale</strong>: Granting autonomous agents unchecked access to sensitive research environments can be dangerous as their actions can inadvertently lead to file modifications, deletions, or corruption of the working directory. Unrestricted access to the working directory also makes it difficult for parallelised agents to work on the same task without overwriting each other’s work, which is a major hurdle for scaling agentic workflows. One way to mitigate this risk is to enforce filesystem and runtime isolation using containerisation. However, HydraR currently lacks the capabilities to safely and securely orchestrate agentic workflows, with integration with filesystem and runtime isolation tools such as Git Worktree, Docker and Singularity/Apptainer for High-Performance Computing (HPC) environments.</p>
 <p><strong>Approach</strong>: To develop a comprehensive environment management system, we will introduce several new features to HydraR:</p>
@@ -5259,8 +5264,7 @@ z-index: 1000;
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{init: { &#39;themeVariables&#39;: { &#39;gridLineColor&#39;: &#39;transparent&#39;} } }%%
-gantt
+<pre class="mermaid mermaid-js">gantt
     title HydraR 7-Week Development Timeline
     dateFormat  YYYY-MM-DD
     axisFormat  %d/%m/%y
@@ -5297,49 +5301,48 @@ gantt
 </section>
 <section id="budget-funding-plan" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="budget-funding-plan"><span class="header-section-number">5.4</span> Budget &amp; Funding Plan</h2>
-<p>Total requested budget: <strong>$14,400 USD</strong>. We request funding for expert software developers to work on this project over a 7-week period (approximately 245 hours).</p>
+<p>Total requested budget: <strong>$14,400 USD</strong>.</p>
+<section id="milestone-1-memory-and-state-management" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="milestone-1-memory-and-state-management"><span class="header-section-number">5.4.1</span> Milestone 1: Memory and State Management</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 29%">
-<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Milestone</th>
 <th style="text-align: left;">Description</th>
-<th style="text-align: center;">Estimated Hours</th>
-<th style="text-align: right;">Funding</th>
+<th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
+<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Memory and State Management</strong></td>
-<td style="text-align: left;">Restart checkpointing, state retrieval and agent validation system</td>
-<td style="text-align: center;">105</td>
-<td style="text-align: right;">$5,760</td>
+<td style="text-align: left;">Personnel</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Environment Management</strong></td>
-<td style="text-align: left;">Integration with git worktree, Docker and compatibility for Singularity/Apptainer</td>
-<td style="text-align: center;">105</td>
-<td style="text-align: right;">$5,760</td>
+<td style="text-align: left;">Aidan Tay (1.0 FTE)</td>
+<td style="text-align: left;">$5,760</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Validation &amp; Community Management</strong></td>
-<td style="text-align: left;">Finalization of agents, skills and documentation</td>
-<td style="text-align: center;">35</td>
-<td style="text-align: right;">$2,880</td>
+<td style="text-align: left;">Ch Nam Ignatius Pang (0.2 FTE)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$1,470</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"><strong>245</strong></td>
-<td style="text-align: right;"><strong>$14,400</strong></td>
+<td style="text-align: left;"><strong>$5,760</strong></td>
+<td style="text-align: left;"><strong>$1,470</strong></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="milestone-2-environment-management" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="milestone-2-environment-management"><span class="header-section-number">5.4.2</span> Milestone 2: Environment Management</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -5348,29 +5351,74 @@ gantt
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
-<th style="text-align: right;"><strong>Macquarie University</strong><br><strong>In-kind</strong></th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
+<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Aidan Tay (1.0 FTE)</td>
-<td style="text-align: right;">$14,400</td>
-<td style="text-align: right;">-</td>
+<td style="text-align: left;">Personnel</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Chi Nam (Ignatius) Pang (0.2 FTE)</td>
-<td style="text-align: right;">-</td>
-<td style="text-align: right;">$3,431</td>
+<td style="text-align: left;">Aidan Tay (1.0 FTE)</td>
+<td style="text-align: left;">$5,760</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Total</td>
-<td style="text-align: right;"><strong>$14,400</strong></td>
-<td style="text-align: right;"><strong>$3,431</strong></td>
+<td style="text-align: left;">Ch Nam Ignatius Pang (0.2 FTE)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$1,470</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>$5,760</strong></td>
+<td style="text-align: left;"><strong>$1,470</strong></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="milestone-3-validation-community-management-approximately-105-hours" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="milestone-3-validation-community-management-approximately-105-hours"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management (approximately 105 hours)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
+<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Personnel</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aidan Tay (1.0 FTE)</td>
+<td style="text-align: left;">$2,880</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ch Nam Ignatius Pang (0.2 FTE)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$490</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>$2,880</strong></td>
+<td style="text-align: left;"><strong>$490</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 </section>
 <section id="success" class="level1" data-number="6">
