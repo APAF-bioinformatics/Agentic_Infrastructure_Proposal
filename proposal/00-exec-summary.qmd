@@ -1,30 +1,7 @@
 # Executive Summary
 
-Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous "agents" that can plan and execute complex tasks that previously demanded computational expertise, and powerful multi-agent systems, where a team of AI agents can autonomously collaborate with one another to tackle multi-faceted problems. By democratizing access to these sophisticated multi-agent systems, this automation not only accelerates biological discovery but also empowers the broader scientific community to harness high-performance workflows once restricted to deep domain specialists.
+Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous "agents" that can plan and execute complex tasks that previously demanded computational expertise, and powerful multi-agent systems, where a team of AI agents can autonomously collaborate with one another to tackle multi-faceted problems. However, the lack of a robust framework to support the development and use of agentic systems in the R ecosystem poses a significnt risk, whereby the ephemeral nature of agent reasoning and potential destructure filesystem modifications, threaten to undermine the integrity of R-based research. Because of this, there is a critical need for traceable, stateful and secure agent orchestration. In this project, we address this need by building on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. Specifically, this project has two distinct objectives. First, we aim to develop a comprehensive memory and state management system for automated retries of failed tasks, execution caching and state retrieval for skipping duplicated tasks and resource optimization, or agent validation for workflow resilience. Second, we aim to develop an environment management system that integrates with filesystem and runtime isolation tools such as Git worktree and Docker to ensure that agents can iterate and fail safely without risking the integrity of sensitive research environments. Thus, by serving as the central hub for traceable, stateful and secure agentic orchestration, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.
 
-Yet despite offering many great benefits, the current R ecosystem lacks a robust framework for traceable, stateful, and secure agent orchestration. Because of this, multi-agent systems poses a significant risk to the reproducibility of R-based scientific research. Thus, to safeguard the integrity of R-based research, a robust framework must exist to support the development and reproducible use of agentic systems.
+## Budget
 
-To address this critical need, this project will build upon **HydraR**, an existing R package dedicated to the scientific reproducibility of agentic systems. Specifically, this project aims to deliver a robust framework for traceable, stateful and secure agent orchestration. To accomplish this, we will develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions into auditable records for peer review and regulatory compliance. We will also develop a native container layer to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments. Thus, by serving as the central hub for traceable, stateful and secure agentic orchestration, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.
-
-### Goals
-
-This project aims to transform HydraR into a foundational infrastructure hub that standardizes agentic workflows for the R community, by developing a production-grade framework that treats agent workflows as verifiable, recoverable sessions. We aim to empower R users to deploy complex multi-agent systems with the same level of auditable precision expected in traditional computational pipelines.
-
-### Methods
-
-We will leverage high-performance technologies, including DuckDB for low-latency state management and native serialization for fault-tolerant checkpointing. Our approach incorporates cryptographic hashing for data provenance and "autopoietic" self-correcting network flows to ensure autonomous research remains within safe, validated boundaries.
-
-### Expected Outcomes (Deliverables?)
-
-1. **HydraR R Package**: A comprehensive toolkit for building stateful agentic graphs.
-2. **Resilience Layer**: A native checkpointing system to minimize failure costs.
-3. **Audit Logs**: Structured, SQL-queryable records of all agent reasoning and tool interactions.
-4. **Community Resources**: Documentation and vignettes demonstrating reproducible workflows for the R Consortium.
-
-### Budget
-
-Total requested budget: **$14,400 USD**. We request funding for expert software developers to work on this project over a 10-week period (approximately 360 hours).
-
-# Executive Summary
-
-HydraR is a high-performance R infrastructure designed to bring scientific rigor and reproducibility to the field of Large Language Model (LLM) orchestration. As autonomous agents become central to bioinformatics research, the R community lacks the tools to ensure these systems are traceable, stateful, and secure. HydraR addresses this gap by implementing a robust "Agentic Infrastructure" layer.
+We are requesting **$14,400 USD** in funding for expert software developers to work on this project over a 7-week period (approximately 245 hours).

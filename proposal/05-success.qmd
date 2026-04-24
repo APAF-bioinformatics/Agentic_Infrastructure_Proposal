@@ -14,8 +14,8 @@ The success of the HydraR infrastructure project will be measured by its adoptio
 The project will be considered successful upon the delivery of:
 
 * A stable CRAN-ready (or Bioconductor-ready) R package named `HydraR`.
-* A fully functional "Checkpoint & Resume" engine demonstrated in a multi-agent bioinformatics workflow.
-* The capability to perform SQL queries over agent reasoning history via an integrated DuckDB backend.
+* A fully functional memory and state management system that can autonomously retry failed tasks, skip previously executed tasks, or validate agent outputs.
+* A fully functional environment memory system that integrates with git worktree, Docker and Singlarity/Apptainer.
 * Comprehensive documentation, including at least three "reproducible case studies" (vignettes) showcasing traceable agent orchestration.
 
 ## Measuring success
@@ -23,9 +23,9 @@ The project will be considered successful upon the delivery of:
 We will use the following markers to track our progress:
 
 * **Week 2**: Completion of the `duckdb` backend and successful hashing of R objects in a session.
-* **Week 4**: Passing unit tests for state serialization and automated recovery from simulated API failures.
-* **Week 6**: Successful community beta-test with at least 5 bioinformatics researchers.
-* **Week 8**: Final project report and publication of the demonstration blog post on the R Consortium website.
+* **Week 4**: Completion of agent validation and integration with git worktree.
+* **Week 6**: Completion of integration with docker and compatibility for Singularity/Apptainer
+* **Week 7**: Successful community beta-test with at least 5 bioinformatics researchers and final project report and publication of the demonstration blog post on the R Consortium website.
 
 ## Future work
 

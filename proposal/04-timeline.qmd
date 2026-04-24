@@ -6,42 +6,41 @@
 
 ## Technical Delivery
 
-The proposed work will be delivered over a 10-week period and involve approximately 360 hours of expert developer time. The work is structured into three phases:
+The proposed work will be delivered over a 7-week period and involve approximately 245 hours of expert developer time. The work is structured into three phases:
 
-* **Phase 1: Memory and State Management (Weeks 1-4)**:
-  * Development of automated state persistence and restart checkpointing.
-  * Development of the serialization engine.
-  * Development of dynamic sub-graph injection for self-correcting flows.
-  * Development of the validation and pruning layers for network preparedness.
+* **Phase 1: Memory and State Management (Weeks 1-3)**:
+  * Development of automated restart checkpointing system.
+  * Development of execution caching and state retrieval system.
+  * Development of agent validation and recovery system.
 
-* **Phase 2: Environment Management (Weeks 5-8)**:
-  * Development of Docker Integration
-  * Development of Git worktree for state tracking in containers
-  * Development of compatibility mapping for Singularity and Apptainer
+* **Phase 2: Environment Management (Weeks 4-6)**:
+  * Integration with Git worktree.
+  * Integration with Docker integration.
+  * Compatibility for Singularity/Apptainer.
 
-* **Phase 3: Validation & Community Management (Weeks 9-10)**:
+* **Phase 3: Validation & Community Management (Week 7)**:
   * Finalization of Agents and Skills Management tools into lifecycle modules.
   * Documentation, bug fixing, and release processing.
 
 ```{mermaid}
 gantt
-    title HydraR 10-Week Development Timeline
+    title HydraR 7-Week Development Timeline
     dateFormat  YYYY-MM-DD
-    axisFormat  %m/%y
+    axisFormat  %d/%m/%y
     
     section Memory and State Management
-    Restart Checkpointing                   :active, dev1, 2026-05-01, 6d
-    Intelligent Hashing and State Retrieval :dev2, after dev1, 6d
-    Dynamic Network Repair & Validation     :dev3, after dev2, 6d
+    Restart Checkpointing                      :dev1, 2026-07-01, 7d
+    Execution Caching and State Retrieval      :dev2, after dev1, 7d
+    Agent Validation and Recovery              :dev3, after dev2, 7d
 
     section Environment Management
-    Docker Integration                      :dev4, after dev3, 6d
-    Git worktree in Docker                  :dev5, after dev4, 6d
-    Singularity & Apptainer                 :dev6, after dev5, 6d
+    Git Worktree Integration                   :dev4, after dev3, 7d
+    Docker Integration                         :dev5, after dev4, 7d
+    Singularity/Apptainer                      :dev6, after dev5, 7d
     
     section Validation & Community Management
-    Agents & Skills Management              :dev7, after dev6, 6d
-    Documentation & Release                 :dev8, after dev7, 6d
+    Agents & Skills Management                 :dev7, after dev6, 7d
+    Documentation & Release                    :dev8, after dev6, 7d
 ```
 
 ## Other Aspects
@@ -54,17 +53,34 @@ gantt
 
 ## Budget & Funding Plan
 
-Total requested budget: **$14,400 USD**. We request funding for expert software developers to work on this project over a 10-week period (approximately 360 hours).
+* Total requested budget: **$14,400 USD**.
+* In-Kind Support: $4,400 AUD (approx. $2,933 USD). Macquarie University will provide in-kind support, covering:
+    * **Project Management**: 0.2 FTE of project management time for the duration of the project.
+    * **Computational Resources**: Access to High-Performance Computing (HPC) resources for testing and development.
 
-| Milestone                             | Description              | Estimated Hours | Funding     |
-| :---                                  | :---                     | :---:           | ---:        |
-| **Memory and State Management**       | [Details of Milestone 1] | 140             | $5,760      |
-| **Environment Management**            | [Details of Milestone 2] | 140             | $5,760      |
-| **Validation & Community Management** | [Details of Milestone 3] | 80              | $2,880      |
-| **Total**                             |                          | **360**         | **$14,400** |
+### Milestone 1: Memory and State Management
 
-|                                   | **R Consortium**<br>**Cash (USD)** | **Macquarie University**<br>**In-kind** |
-| :---                              | ---:                               | ---:                                    |
-| Aidan Tay (1.0 FTE)               | $14,400                            | -                                       |
-| Chi Nam (Ignatius) Pang (0.2 FTE) | -                                  | $3,431                                  |
-| Total                             | **$14,400**                        | **$3,431**                              |
+| Description                        | **R Consortium**<br>**Cash (USD)** | **Macquarie University**<br>**In-kind (AUD)** |
+| :---                               | :---                               | :---                                          |
+| Personnel                          |                                    |                                               |
+|   Aidan Tay (1.0 FTE)              | $5,760                             |                                               |
+|   Ch Nam (Ignatius) Pang (0.2 FTE) |                                    | $1,470                                        |
+| **Total**                          | **$5,760**                         | **$1,470**                                    |
+
+### Milestone 2: Environment Management
+
+| Description                        | **R Consortium**<br>**Cash (USD)** | **Macquarie University**<br>**In-kind (AUD)** |
+| :---                               | :---                               | :---                                          |
+| Personnel                          |                                    |                                               |
+|   Aidan Tay (1.0 FTE)              | $5,760                             |                                               |
+|   Ch Nam (Ignatius) Pang (0.2 FTE) |                                    | $1,470                                        |
+| **Total**                          | **$5,760**                         | **$1,470**                                    |
+
+### Milestone 3: Validation & Community Management
+
+| Description                        | **R Consortium**<br>**Cash (USD)** | **Macquarie University**<br>**In-kind (AUD)** |
+| :---                               | :---                               | :---                                          |
+| Personnel                          |                                    |                                               |
+|   Aidan Tay (1.0 FTE)              | $2,880                             |                                               |
+|   Ch Nam (Ignatius) Pang (0.2 FTE) |                                    | $490                                          |
+| **Total**                          | **$2,880**                         | **$490**                                      |

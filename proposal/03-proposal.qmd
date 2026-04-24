@@ -2,35 +2,42 @@
 
 ## Overview
 
-The current R ecosystem lacks the necessary framework to ensure integrity of R-based scentific research using multi-agent systems. To address this critical gap, this project will build on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. Specifically, this project aims to extend HydraR's functionality by delivering a robust framework for traceable, stateful and secure agent orchestration. In doing so, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.
+The current R ecosystem lacks the necessary framework for traceable, stateful and secure agent orchestration. To address this critical gap, this project will build on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. By leveraging the existing functionality of HydraR, this project aims to deliver a robust framework for traceable, stateful and secure agent orchestration. In doing so, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.
 
 ## Details
 
-This project aims to extend HydraR's functionality by delivering a robust framework for traceable, stateful and secure agent orchestration. In particular, this project has two objectives:
+This project aims to address the critical need for traceable, stateful, and secure agent orchestration in the R ecosystem. To do this, we will extend on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. In particular, we aim to address this gap through two objectives:
 
-**Objective 1**: To develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions into auditable records for peer review and regulatory compliance.
+### Objective 1: Memory and State Management
 
-**Rationale**: Agent memory is often ephermeral and untraceable, making it difficult to capture and audit the entire "journey" of an agentic workflow. This poses a significant risk to the reproducibility of R-based scientific research.
- to ensure that agents are resilient against system and API failures.
+**Aim**: To develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions into auditable records for peer review and regulatory compliance.
 
-**Approach**: To develop a comprehensive memory system, we will introduce several enhancements to HydraR’s memory system:
+**Rationale**: Agent memory is often ephermeral and untraceable, making it difficult to capture and audit the entire "journey" of an agentic workflow. Currently, HydraR uses DuckDB to maintain a central memory system that continuously saves workflow checkpoints, ensuring a complete, verifiable record of all AI interactions and data changes. Despite this, HydraR does not support automated retries for failed tasks, execution caching and state retreival for skipping duplicated tasks and resource optimization, or agent validation for workflow resilience, which are essential for production-grade bioinformatic pipelines.
 
-* **Restart Checkpointing**: We will implement a native serialization engine that maps directly to an `on_failure` lifecycle hook. Every node in the agentic graph will automatically serialize its environment, local variables, and current reasoning state. In the event of a failure (API timeout, resource exhaustion, or logic error), HydraR can reconstitute the exact state of the R session, allowing for manual intervention or automated retries without restarting the entire pipeline.
+**Approach**: To develop a comprehensive memory and state management system, we will introduce several enhancements to HydraR: 
 
-* **Intelligent Hashing and State Retrieval**: We will implement a content-addressable storage (CAS) model for all agent-generated artifacts. By hashing output files and R objects, we link every piece of data to the specific state and reasoning path that produced it. This enables high-performance state retrieval: the system can "skip" already-computed nodes if the input hashes match, effectively providing a "make"-like capability for agentic workflows.
+* **Restart Checkpointing**: We will implement a system to automatically serialize agents, environment, local variables, and their current reasoning state. Thus, in the event of a failure (API timeout, resource exhaustion, or logic error), HydraR can reconstitute the exact state of the R session, allowing for automated retries without restarting the entire pipeline.
 
-* **Dynamic Network Repair**: We will implement "autopoietic" self-correcting network flows. If an agent's output fails a validation layer (e.g., malformed code or incorrect data schema), the orchestration engine can dynamically inject a "repair" sub-graph. This sub-graph tasks a specialist agent with diagnosing and fixing the error, ensuring the main research flow continues safely and autonomously.
+* **Execution Caching and State Retrieval**: We will implement a content-addressable storage (CAS) model for all agent-generated artifacts. By hashing output files and R objects, and linking them to specific states and reasoning paths, HydraR can maintain a complete audit trail of how each artifact was generated, allowing the system to "skip" previously executed tasks and "resume" from any point in the workflow. 
 
-* **Network Preparedness and Validation**: The infrastructure will include a "preparedness" layer that governs the growth and pruning of the agent network. Before a new tool or agent is integrated into a workflow, it undergoes a validation pass to ensure its schema and permissions are compatible with the existing security posture. This prevents "state drift" and ensures the network remains optimal and secure.
+* **Agent Validation and Recovery**: We will implement a system to automatically validate agent outputs. Thus, if the output of an agent fails to validate (e.g., malformed code or incorrect data schema), the orchestration engine can dynamically inject a "repair" to diagnose and rectify the error, ensuring the main research flow continues safely and autonomously.
 
-**Objective 2**: To develop a native container layer to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments. 
+![Memory and State Management](proposal/assets/memory_management.png)
 
-**Rationale**: Security and reproducible environments are paramount for computational biology. 
+### Objective 2: Environment Management
 
-**Approach**: To address this, we will introduce several enhancmenets to HydraR's container layer to ensure secure and reproducible environments for multi-agent systems.
+**Aim**: To develop an environment management system to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments. 
 
-* **Docker Integration with Git Worktrees**: We will implement a native Docker orchestration layer where each agent execution environment is isolated within a container. To ensure strict traceability of filesystem modifications, HydraR will utilize Git worktrees inside these containers. Every task assigned to an agent will be executed within a unique worktree, allowing HydraR to capture a "git-diff" of all file changes made by the agent. This prevents accidental corruption of the main research branch and provides a cryptographic record of every file modification.
+**Rationale**: Granting autonomous agents unchecked access to sensitive research environments can be dangerous as their actions can inadvertently lead to file modifications, deletions, or corruption of the working directory. Unrestricted access to the working directory also makes it difficult for parallelised agents to work on the same task without overwriting each other's work, which is a major hurdle for scaling agentic workflows. One way to mitigate this risk is to enforce filesystem and runtime isolation using containerisation. However, HydraR currently lacks the capabilities to safely and securely orchestrate agentic workflows, with integration with filesystem and runtime isolation tools such as Git Worktree, Docker and Singularity/Apptainer for High-Performance Computing (HPC) environments.
 
-* **Singularity and Apptainer for HPC**: Recognizing that many bioinformatics workflows are hosted on institutional HPC clusters, HydraR will provide first-class support for Singularity and Apptainer. This ensures that agents can be deployed in environments where Docker is restricted. We will tailor this support to standard HPC structures (e.g., SLURM integration and shared filesystem mounts), ensuring that the agentic infrastructure respects the security and resource policies of high-performance computing centers.
+**Approach**: To develop a comprehensive environment management system, we will introduce several new features to HydraR:
+
+* **Git Worktrees**: We will implement a Git worktree layer to prevent agents from modifying the filesystem at the same time. By assigning every task to a unique worktree, HydraR can capture and track all file changes made by the agent. This prevents accidental corruption of the main research branch as well as an auditable record of every file modification.
+
+* **Docker Integration**: We will implement a Docker layer where each agent execution environment is isolated within a container. Every agent can operate in its own ephemeral environment, allowing the orchestrator to spin up and shut down environments as needed. This will also ensure that the agentic workflows are reproducible, as each agent can be executed in the same environment.
+
+* **Singularity and Apptainer for HPC**: Recognizing that many bioinformatics workflows are hosted on institutional HPC clusters, where Docker may be restricted, we will provide first-class support for Singularity and Apptainer. We will tailor this support to standard HPC structures (e.g., SLURM integration and shared filesystem mounts), ensuring that the agentic infrastructure respects the security and resource policies of high-performance computing centers.
 
 * **Persistent State Tracking via Mounted Worktrees**: To bridge the gap between container volatility and workflow statefulness, HydraR will manage Git worktree logic within persistent Docker mounts. By mounting the worktree directory from the host to the container, we ensure that the agent's filesystem state is preserved across container restarts. Combined with our `on_failure` checkpointing, this allows an agent to resume from the exact filesystem state it was in before a crash, while maintaining a versioned history of its progress via Git.
+
+![Environment Management](proposal/assets/environment_management.png)

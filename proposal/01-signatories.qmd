@@ -7,7 +7,6 @@
 
 ## Contributors
 
-- **Will Klare** ([ORCID: 0000-0002-1490-9704](https://orcid.org/0000-0002-1490-9704)). **Associate Investigator**. Bioinformatician at APAF. Expert in reproducible research, statistical methodology, agentic systems, and R package development.
 - **APAF Bioinformatics Team**: Provided the testing ground for initial prototypes in high-throughput proteomics and metabolomics research.
 - **Antigravity AI**: Agentic assistant used during the rapid prototyping and documentation hardening phase of the project (as disclosed in `agents.md`).
 
