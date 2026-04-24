@@ -63,9 +63,8 @@ Total requested budget: **$14,400 USD**. We request funding for expert software 
 | **Validation & Community Management** | [Details of Milestone 3] | 80              | $2,880      |
 | **Total**                             |                          | **360**         | **$14,400** |
 
-|                                   | **R Consortium** | **Macquarie University** |
-|                                   | **Cash (USD)**   | **In-kind**              |
-| :---                              | ---:             | ---:                     |
-| Aidan Tay (1.0 FTE)               | $14,400          | -                        |
-| Chi Nam (Ignatius) Pang (0.2 FTE) | -                | $3,431                   |
-| Total                             | **$14,400**      | **$3,431**               |
+|                                   | **R Consortium**<br>**Cash (USD)** | **Macquarie University**<br>**In-kind** |
+| :---                              | ---:                               | ---:                                    |
+| Aidan Tay (1.0 FTE)               | $14,400                            | -                                       |
+| Chi Nam (Ignatius) Pang (0.2 FTE) | -                                  | $3,431                                  |
+| Total                             | **$14,400**                        | **$3,431**                              |
