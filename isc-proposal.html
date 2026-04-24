@@ -5262,21 +5262,21 @@ z-index: 1000;
 <pre class="mermaid mermaid-js">gantt
     title HydraR 7-Week Development Timeline
     dateFormat  YYYY-MM-DD
-    axisFormat  %m/%y
+    axisFormat  %d/%m/%y
     
     section Memory and State Management
-    Restart Checkpointing                     :active, dev1, 2026-07-01, 7d
-    Execution Caching and State Retrieval     :dev2, after dev1, 7d
-    Agent Validation and Recovery             :dev3, after dev2, 7d
+    Restart Checkpointing                      :dev1, 2026-07-01, 7d
+    Execution Caching and State Retrieval      :dev2, after dev1, 7d
+    Agent Validation and Recovery              :dev3, after dev2, 7d
 
     section Environment Management
     Git Worktree Integration                   :dev4, after dev3, 7d
-    Docker Integration                         :dev4, after dev3, 7d
+    Docker Integration                         :dev5, after dev4, 7d
     Singularity &amp; Apptainer                    :dev6, after dev5, 7d
     
     section Validation &amp; Community Management
     Agents &amp; Skills Management                 :dev7, after dev6, 7d
-    Documentation &amp; Release                    :dev8, after dev6, 7d
+    Documentation &amp; Release                    :dev8, after dev7, 7d
 </pre>
 </div>
 <p></p></figure><p></p>
