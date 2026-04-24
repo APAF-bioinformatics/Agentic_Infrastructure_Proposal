@@ -21,10 +21,11 @@ The project will be considered successful upon the delivery of:
 ## Measuring success
 
 We will use the following markers to track our progress:
-* **Month 2**: Completion of the `duckdb` backend and successful hashing of R objects in a session.
-* **Month 4**: Passing unit tests for state serialization and automated recovery from simulated API failures.
-* **Month 6**: Successful community beta-test with at least 5 bioinformatics researchers.
-* **Month 8**: Final project report and publication of the demonstration blog post on the R Consortium website.
+
+* **Week 2**: Completion of the `duckdb` backend and successful hashing of R objects in a session.
+* **Week 4**: Passing unit tests for state serialization and automated recovery from simulated API failures.
+* **Week 6**: Successful community beta-test with at least 5 bioinformatics researchers.
+* **Week 8**: Final project report and publication of the demonstration blog post on the R Consortium website.
 
 ## Future work
 

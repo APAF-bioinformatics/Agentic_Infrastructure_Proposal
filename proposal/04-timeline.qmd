@@ -2,7 +2,7 @@
 
 ## Start-up Phase
 
-* **[ ] Reporting Framework**: Establish a bi-weekly internal review process to track milestone progress.
+* **Reporting Framework**: Establish a bi-weekly internal review process to track milestone progress.
 
 ## Technical Delivery
 
@@ -67,6 +67,5 @@ Total requested budget: **$14,400 USD**. We request funding for expert software 
 |                                   | **Cash (USD)**   | **In-kind**              |
 | :---                              | ---:             | ---:                     |
 | Aidan Tay (1.0 FTE)               | $14,400          | -                        |
-| Chi Nam (Ignatius) Pang (0.2 FTE) | -                | ??                       |
-| Developer (0.2 FTE)               | -                | ??                       |
-| Total                             | **$14,400**      | ??                       |
+| Chi Nam (Ignatius) Pang (0.2 FTE) | -                | $3,431                   |
+| Total                             | **$14,400**      | **$3,431**               |
