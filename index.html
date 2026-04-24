@@ -5102,7 +5102,7 @@ z-index: 1000;
   <ul class="collapse">
   <li><a href="#milestone-1-memory-and-state-management" id="toc-milestone-1-memory-and-state-management" class="nav-link" data-scroll-target="#milestone-1-memory-and-state-management"><span class="header-section-number">5.4.1</span> Milestone 1: Memory and State Management</a></li>
   <li><a href="#milestone-2-environment-management" id="toc-milestone-2-environment-management" class="nav-link" data-scroll-target="#milestone-2-environment-management"><span class="header-section-number">5.4.2</span> Milestone 2: Environment Management</a></li>
-  <li><a href="#milestone-3-validation-community-management-approximately-105-hours" id="toc-milestone-3-validation-community-management-approximately-105-hours" class="nav-link" data-scroll-target="#milestone-3-validation-community-management-approximately-105-hours"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management (approximately 105 hours)</a></li>
+  <li><a href="#milestone-3-validation-community-management" id="toc-milestone-3-validation-community-management" class="nav-link" data-scroll-target="#milestone-3-validation-community-management"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#success" id="toc-success" class="nav-link" data-scroll-target="#success"><span class="header-section-number">6</span> Success</a>
@@ -5251,9 +5251,9 @@ z-index: 1000;
 <ul>
 <li>Integration with Git worktree.</li>
 <li>Integration with Docker integration.</li>
-<li>Compatibility for Singularity and Apptainer.</li>
+<li>Compatibility for Singularity/Apptainer.</li>
 </ul></li>
-<li><strong>Phase 3: Validation &amp; Community Management (Weeks 6-7)</strong>:
+<li><strong>Phase 3: Validation &amp; Community Management (Week 7)</strong>:
 <ul>
 <li>Finalization of Agents and Skills Management tools into lifecycle modules.</li>
 <li>Documentation, bug fixing, and release processing.</li>
@@ -5277,11 +5277,11 @@ z-index: 1000;
     section Environment Management
     Git Worktree Integration                   :dev4, after dev3, 7d
     Docker Integration                         :dev5, after dev4, 7d
-    Singularity &amp; Apptainer                    :dev6, after dev5, 7d
+    Singularity/Apptainer                      :dev6, after dev5, 7d
     
     section Validation &amp; Community Management
     Agents &amp; Skills Management                 :dev7, after dev6, 7d
-    Documentation &amp; Release                    :dev8, after dev7, 7d
+    Documentation &amp; Release                    :dev8, after dev6, 7d
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -5380,8 +5380,8 @@ z-index: 1000;
 </tbody>
 </table>
 </section>
-<section id="milestone-3-validation-community-management-approximately-105-hours" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="milestone-3-validation-community-management-approximately-105-hours"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management (approximately 105 hours)</h3>
+<section id="milestone-3-validation-community-management" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="milestone-3-validation-community-management"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -5438,8 +5438,8 @@ z-index: 1000;
 <p>The project will be considered successful upon the delivery of:</p>
 <ul>
 <li>A stable CRAN-ready (or Bioconductor-ready) R package named <code>HydraR</code>.</li>
-<li>A fully functional “Checkpoint &amp; Resume” engine demonstrated in a multi-agent bioinformatics workflow.</li>
-<li>The capability to perform SQL queries over agent reasoning history via an integrated DuckDB backend.</li>
+<li>A fully functional memory and state management system that can autonomously retry failed tasks, skip previously executed tasks, or validate agent outputs.</li>
+<li>A fully functional environment memory system that integrates with git worktree, Docker and Singlarity/Apptainer.</li>
 <li>Comprehensive documentation, including at least three “reproducible case studies” (vignettes) showcasing traceable agent orchestration.</li>
 </ul>
 </section>
@@ -5448,7 +5448,8 @@ z-index: 1000;
 <p>We will use the following markers to track our progress:</p>
 <ul>
 <li><strong>Week 2</strong>: Completion of the <code>duckdb</code> backend and successful hashing of R objects in a session.</li>
-<li><strong>Week 4</strong>: Passing unit tests for state serialization and automated recovery from simulated API failures.</li>
+<li><strong>Week 4</strong>: Completion of agent validation and integration with git worktree.</li>
+<li><strong>Week 6</strong>: Completion of integration with docker and compatibility for Singularity/Apptainer</li>
 <li><strong>Week 7</strong>: Successful community beta-test with at least 5 bioinformatics researchers and final project report and publication of the demonstration blog post on the R Consortium website.</li>
 </ul>
 </section>
