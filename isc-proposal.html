@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Chi Nam (Ignatius) Pang, Aidan Tay">
-<meta name="dcterms.date" content="2026-04-28">
+<meta name="dcterms.date" content="2026-04-29">
 
 <title>HydraR: Agentic Infrastructure for Reproducible Scientific Research</title>
 <style>
@@ -2201,9 +2201,7 @@ vertical-align: -.125em;
   <li><a href="#other-aspects" id="toc-other-aspects" class="nav-link" data-scroll-target="#other-aspects"><span class="header-section-number">5.3</span> Other Aspects</a></li>
   <li><a href="#budget-funding-plan" id="toc-budget-funding-plan" class="nav-link" data-scroll-target="#budget-funding-plan"><span class="header-section-number">5.4</span> Budget &amp; Funding Plan</a>
   <ul class="collapse">
-  <li><a href="#milestone-1-memory-and-state-management" id="toc-milestone-1-memory-and-state-management" class="nav-link" data-scroll-target="#milestone-1-memory-and-state-management"><span class="header-section-number">5.4.1</span> Milestone 1: Memory and State Management</a></li>
-  <li><a href="#milestone-2-environment-management" id="toc-milestone-2-environment-management" class="nav-link" data-scroll-target="#milestone-2-environment-management"><span class="header-section-number">5.4.2</span> Milestone 2: Environment Management</a></li>
-  <li><a href="#milestone-3-validation-community-management" id="toc-milestone-3-validation-community-management" class="nav-link" data-scroll-target="#milestone-3-validation-community-management"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management</a></li>
+  <li><a href="#milestones-budget" id="toc-milestones-budget" class="nav-link" data-scroll-target="#milestones-budget"><span class="header-section-number">5.4.1</span> Milestones Budget</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#success" id="toc-success" class="nav-link" data-scroll-target="#success"><span class="header-section-number">6</span> Success</a>
@@ -2237,7 +2235,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-04-28</p>
+      <p class="date">2026-04-29</p>
     </div>
   </div>
   
@@ -2285,18 +2283,18 @@ vertical-align: -.125em;
 <h1 data-number="3"><span class="header-section-number">3</span> The Problem</h1>
 <p>Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous “agents” that can plan and execute complex tasks previously requiring computational expertise, and into powerful multi-agent systems, where a team of AI agents can autonomously collaborate to tackle multifaceted problems. By democratizing access to these sophisticated multi-agent systems, this automation not only accelerates biological discovery but also empowers the broader scientific community to harness high-performance workflows once restricted to deep domain specialists.</p>
 <p>Yet despite offering many great benefits, <strong>the current R ecosystem lacks the necessary framework for traceable, stateful, and secure agent orchestration</strong>. Existing R packages such as <code>ellmer</code> and <code>mall</code> provide excellent interfaces to LLM providers to send prompts and parse responses but fail to record the entire decision-making process of an agent, making the “journey” ephemeral and untraceable. Other packages such as <code>LLMAgentR</code> and <code>puppeteeR</code> enable agent orchestration, but lack the infrastructure for state management, making it impossible for multi-agent systems to meet the rigorous reproducibility standards of modern bioinformatics. Meanwhile, advanced frameworks such as <code>LangGraph</code> and <code>AutoGen</code> in the Python ecosystem lack the necessary features for auditable agent orchestration, rendering them unsuitable for R-based research via Python-based bridges (i.e., <code>reticulate</code>). Moreover, granting autonomous agents unchecked access to research environments can be dangerous as their actions can inadvertently lead to file modifications, deletions, or corruption of the working directory. Thus, to safeguard the integrity of R-based research, a robust framework must exist to support the development and reproducible use of agentic systems.</p>
-<p><strong>To address this critical gap in the R ecosystem, this project will build on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems</strong>. Specifically, we aim to develop:</p>
+<p><strong>To address this critical gap in the R ecosystem, this project will build on HydraR (https://github.com/APAF-bioinformatics/HydraR), an existing R package dedicated to the scientific reproducibility of agentic systems</strong>. Specifically, we aim to develop:</p>
 <ol type="1">
 <li>A comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions.</li>
-<li>A robust environment management system to ensure agents can iterate and fail safely without risking the integrity of sensitive research environments.</li>
+<li>A robust environment management system for isolating agents from the host environment.</li>
 </ol>
-<p>By delivering these systems, we will provide the R community with a robust, transparent and reproducible framework for the next generation of agentic tools, thus transforming HydraR into an infrastructure hub for AI-driven R development. By serving as the central infrastructure hub for traceable, stateful and secure agentic orchestration, HydraR will empower computational biologists and the broader R community to adopt agentic systems with confidence, and build sophisticated, transparent and reproducible AI-driven workflows that uphold the rigor and integrity of R-based scientific research.</p>
+<p>By delivering these systems, we will equip computational biologists with the necessary tools for developing production-grade agentic systems for bioinformatics, such as automatic retry of failed tasks, reduction of redundant computations, and safe execution of agents without risking the integrity of sensitive research environments. Crucially, this agentic-agnostic framework guarantees that HydraR can integrate with any existing or future agent orchestration package, thereby transforming HydraR into an infrastructure hub for the next generation of agentic tools. By serving as the central foundation for traceable, stateful, and secure agent orchestration, HydraR will empower computational biologists and R developers alike to adopt agentic systems with confidence, enabling them to build sophisticated, reproducible AI-driven workflows that uphold the rigorous standards of scientific research.</p>
 </section>
 <section id="the-proposal" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> The Proposal</h1>
 <section id="overview" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">4.1</span> Overview</h2>
-<p>This project aims to address the critical need for traceable, stateful, and secure agent orchestration in the R ecosystem. To address this need, we will build on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. In particular, we aim to develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions, and a robust environment management system for isolating agents from the host environment. By delivering these systems, we will provide the R community with a robust, transparent and reproducible framework for the next generation of agentic tools, thus transforming HydraR into an infrastructure hub for AI-driven R development.</p>
+<p>This project aims to address the critical need for traceable, stateful, and secure agent orchestration in the R ecosystem. To address this need, we will build on HydraR (https://github.com/APAF-bioinformatics/HydraR), an existing R package dedicated to the scientific reproducibility of agentic systems. In particular, we aim to develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions, and a robust environment management system for isolating agents from the host environment. By delivering these systems, we will equip computational biologists with the necessary tools for developing production-grade agentic systems for bioinformatics, such as automatic retry of failed tasks, reduction of redundant computations, and safe execution of agents without risking the integrity of sensitive research environments. Crucially, HydraR will provide an agent-agnostic framework that can integrate with any existing or future agent orchestration package, thereby transforming HydraR into an infrastructure hub for the next generation of agentic tools.</p>
 </section>
 <section id="details" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="details"><span class="header-section-number">4.2</span> Details</h2>
@@ -2315,9 +2313,9 @@ vertical-align: -.125em;
 <h4 data-number="4.2.1.3" class="anchored" data-anchor-id="approach"><span class="header-section-number">4.2.1.3</span> Approach</h4>
 <p>To develop a comprehensive memory and state management system, we will introduce several enhancements to HydraR:</p>
 <ul>
-<li><strong>Restart Checkpointing</strong>: We will implement a system to automatically serialize agents, environment, local variables, and their current reasoning state. Thus, in the event of a failure (API timeout, resource exhaustion, or logic error), HydraR can reconstitute the exact state of the R session, allowing for automated retries without restarting the entire pipeline.</li>
+<li><strong>Restart Checkpointing</strong>: We will implement a system to automatically serialize agents, environment, local variables, and their current reasoning state. Thus, in the event of a failure (e.g., API timeout, resource exhaustion, or logic error), HydraR can reconstitute the exact state of the R session, allowing for automated retries without restarting the entire pipeline.</li>
 <li><strong>Execution Caching and State Retrieval</strong>: We will implement a content-addressable storage (CAS) model for all agent-generated artifacts. By hashing output files and R objects, and linking them to specific states and reasoning paths, HydraR can maintain a complete audit trail of how each artifact was generated, allowing the system to “skip” previously executed tasks and “resume” from any point in the workflow.</li>
-<li><strong>Agent Validation and Recovery</strong>: We will implement a system to automatically validate agent outputs. Thus, if the output of an agent fails to validate (e.g., malformed code or incorrect data schema), the orchestration engine can dynamically inject a “repair” to diagnose and rectify the error, ensuring the main research flow continues safely and autonomously.</li>
+<li><strong>Agent Validation and Recovery</strong>: We will implement a system to automatically validate agent outputs. Thus, if the output of an agent fails to validate (e.g., malformed code or incorrect data schema), HydraR can diagnose and rectify the error, ensuring the main research flow continues safely and autonomously.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2400,132 +2398,47 @@ vertical-align: -.125em;
 <li><strong>Conference</strong>: We will attend and present HydraR at relevant conferences to engage with the bioinformatics community.</li>
 <li><strong>Social media</strong>: We will utilize social media to engage with the bioinformatics community.</li>
 <li><strong>Publicity</strong>: We will share quarterly updates on the R Consortium blog.</li>
-<li><strong>Community Engagement</strong>: We will undergo the rOpenSci peer-review process and transition to a community-maintained model.</li>
+<li><strong>Community Engagement</strong>: An early version of the tool is already undergoing the rOpenSci peer-review process and will transition to a community-maintained model.</li>
 </ul>
 </section>
 <section id="budget-funding-plan" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="budget-funding-plan"><span class="header-section-number">5.4</span> Budget &amp; Funding Plan</h2>
 <ul>
 <li>Total requested budget: <strong>$14,400 USD</strong>.</li>
-<li>In-Kind Support: $4,400 AUD (approx. $3,165 USD). Macquarie University will provide in-kind support, covering:
+<li>Macquarie University will provide support, covering:
 <ul>
-<li><strong>Project Management</strong>: 0.2 FTE of project management time for the duration of the project.</li>
 <li><strong>Computational Resources</strong>: Access to High-Performance Computing (HPC) resources for testing and development.</li>
 </ul></li>
 </ul>
-<section id="milestone-1-memory-and-state-management" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="milestone-1-memory-and-state-management"><span class="header-section-number">5.4.1</span> Milestone 1: Memory and State Management</h3>
+<section id="milestones-budget" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="milestones-budget"><span class="header-section-number">5.4.1</span> Milestones Budget</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Description</th>
 <th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
-<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Personnel</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Co-CI Tay (1.0 FTE)</td>
+<td style="text-align: left;"><strong>Milestone 1: Memory and State Management</strong></td>
 <td style="text-align: left;">$5,760</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Co-CI Pang (0.2 FTE)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">$1,760</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"><strong>$5,760</strong></td>
-<td style="text-align: left;"><strong>$1,760</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="milestone-2-environment-management" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="milestone-2-environment-management"><span class="header-section-number">5.4.2</span> Milestone 2: Environment Management</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
-<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Personnel</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Co-CI Tay (1.0 FTE)</td>
+<td style="text-align: left;"><strong>Milestone 2: Environment Management</strong></td>
 <td style="text-align: left;">$5,760</td>
-<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Co-CI Pang (0.2 FTE)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">$1,760</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"><strong>$5,760</strong></td>
-<td style="text-align: left;"><strong>$1,760</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="milestone-3-validation-community-management" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="milestone-3-validation-community-management"><span class="header-section-number">5.4.3</span> Milestone 3: Validation &amp; Community Management</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;"><strong>R Consortium</strong><br><strong>Cash (USD)</strong></th>
-<th style="text-align: left;"><strong>Macquarie University</strong><br><strong>In-kind (AUD)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Personnel</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Co-CI Tay (1.0 FTE)</td>
+<td style="text-align: left;"><strong>Milestone 3: Validation &amp; Community Management</strong></td>
 <td style="text-align: left;">$2,880</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Co-CI Pang (0.2 FTE)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">$880</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"><strong>$2,880</strong></td>
-<td style="text-align: left;"><strong>$880</strong></td>
+<td style="text-align: left;"><strong>$14,400</strong></td>
 </tr>
 </tbody>
 </table>
