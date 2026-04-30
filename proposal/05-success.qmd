@@ -22,7 +22,7 @@ The project will be considered successful upon the delivery of:
 
 We will use the following markers to track our progress:
 
-* **Week 2**: Completion of the `duckdb` backend and successful hashing of R objects in a session.
+* **Week 2**: Completion of the DuckDB backend and successful hashing of R objects in a session.
 * **Week 4**: Completion of agent validation and integration with Git worktree.
 * **Week 6**: Completion of integration with Docker and compatibility for Singularity/Apptainer
 * **Week 7**: Successful community beta-test with at least 5 bioinformatics researchers and final project report and publication of the demonstration blog post on the R Consortium website.
@@ -36,7 +36,7 @@ HydraR is backed by **APAF Bioinformatics** (at Macquarie University), ensuring 
 
 HydraR is designed to be the foundation for an "Autopoietic Agentic Ecosystem" in R, with autopoietic defined as the capacity of the system to maintain and reproduce itself. Future development directions include:
 
-*   **Decentralized Orchestration**: Extending the infrastructure to support peer-to-peer agent coordination across distributed R nodes.
-*   **Self-maintaining agents**: Agents that can autonomously create or remove agent nodes and to dynamically reconfigure their connections in response to the outputs of other agents. 
-*   **Advanced Containerization**: Tighter integration with Docker/Singularity for "Secure Execution Enclaves" where agents can test code in isolated environments.
-*   **Agentic Benchmarking**: A standardized suite for benchmarking LLM performance on bioinformatics-specific R tasks using the HydraR traceability layer.
+* **Decentralized Orchestration**: Extending the infrastructure to support peer-to-peer agent coordination across distributed R nodes.
+* **Self-maintaining agents**: Agents that can autonomously create or remove agent nodes and to dynamically reconfigure their connections in response to the outputs of other agents. 
+* **Advanced Containerization**: Tighter integration with Docker/Singularity for "Secure Execution Enclaves" where agents can test code in isolated environments.
+* **Agentic Benchmarking**: A standardized suite for benchmarking LLM performance on bioinformatics-specific R tasks using the HydraR traceability layer.
