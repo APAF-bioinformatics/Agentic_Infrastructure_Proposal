@@ -2,8 +2,8 @@
 
 ## Project team
 
-- **Chi Nam (Ignatius) Pang** - **Co-Primary Investigator**. Senior Bioinformatician at Macquarie University / Australian Proteome Analysis Facility (APAF). Expert in R package development, proteomics pipelines, and reproducibility standards.
-- **Aidan Tay** - **Co-Primary Investigator**. Bioinformatician at APAF. Architect of the HydraR R6 DAG engine, Git worktree isolation logic, and the custom state-hashing persistence Layer.
+- **Chi Nam (Ignatius) Pang** - **Co-Primary Investigator Co-CI Pang**. Senior Bioinformatician at Macquarie University / Australian Proteome Analysis Facility (APAF). Expert in R package development, proteomics pipelines, and reproducibility standards.
+- **Aidan Tay** - **Co-Primary Investigator Co-CI Tay**. Bioinformatician at APAF. Architect of the HydraR R6 DAG engine, Git worktree isolation logic, and the custom state-hashing persistence Layer.
 
 ## Contributors
 

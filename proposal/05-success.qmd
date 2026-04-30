@@ -6,7 +6,7 @@ The success of the HydraR infrastructure project will be measured by its adoptio
 
 * **Package Adoption**: At least 3 existing R/Bioconductor packages demonstrating "Skill Node" integration via the HydraR manifest protocol.
 * **Reliability Benchmark**: A published reproducible benchmark dataset showing a >20% improvement in agent task completion rates when using HydraR state management vs. stateless alternatives.
-* **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model.
+* **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model. We will seek to demonstrate the tool via online webinars or community user groups hosted by the Australian BioCommons (https://www.biocommons.org.au/), local workshops hosted by APAF and Macquarie University and as submitted abstract at relevant bioinformatics and proteomics conferences.
 * **CRAN/Bioconductor Presence**: Maintain the 0-error/warning/note status across all major R versions.
 
 ## Definition of Done
@@ -31,11 +31,12 @@ We will use the following markers to track our progress:
 
 HydraR is backed by **APAF Bioinformatics** (at Macquarie University), ensuring long-term institutional support and alignment with national-scale bioinformatics infrastructure (NCRIS). 
 
-* **Commercial & Institutional Support**: Ongoing maintenance is built into the APAF digital transformation roadmap (2026-2030).
+* **Commercial & Institutional Support**: Ongoing maintenance is supported by funding of APAF bioinformatics staff until end of 2028. Co-CI Pang will continue to maintain the package after the grant period as part of his role at APAF.
 * **Open Source Community**: By providing an interoperable manifest protocol, we encourage a "plugin" ecosystem where community members can contribute drivers and skill nodes without needing deep knowledge of the core DAG engine, ensuring the framework outlives its original funding period.
 
-HydraR is designed to be the foundation for an "Autopoietic Agentic Ecosystem" in R. Future development directions include:
+HydraR is designed to be the foundation for an "Autopoietic Agentic Ecosystem" in R, with autopoietic defined as the capacity of the system to maintain and reproduce itself. Future development directions include:
 
 *   **Decentralized Orchestration**: Extending the infrastructure to support peer-to-peer agent coordination across distributed R nodes.
+*   **Self-maintaining agents**: Agents that can autonomously create or remove agent nodes and to dynamically reconfigure their connections in response to the outputs of other agents. 
 *   **Advanced Containerization**: Tighter integration with Docker/Singularity for "Secure Execution Enclaves" where agents can test code in isolated environments.
 *   **Agentic Benchmarking**: A standardized suite for benchmarking LLM performance on bioinformatics-specific R tasks using the HydraR traceability layer.
