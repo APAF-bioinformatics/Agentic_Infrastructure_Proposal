@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project aims to address the critical need for traceable, stateful, and secure agent orchestration in the R ecosystem. To address this need, we will build on HydraR (https://github.com/APAF-bioinformatics/HydraR), an existing R package dedicated to the scientific reproducibility of agentic systems. In particular, **we aim to develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions, and a robust environment management system for isolating agents from the host environment**. By delivering these systems, we will equip computational biologists with the necessary tools for developing production-grade agentic systems for bioinformatics, such as automatic retry of failed tasks, reduction of redundant computations, and safe execution of agents without risking the integrity of sensitive research environments. Critically, HydraR will provide an agent-agnostic framework that can integrate with any existing or future agent orchestration package, thereby transforming HydraR into an infrastructure hub for the next generation of agentic tools.
++ This project addresses the critical need for traceable, stateful, and secure agent orchestration in R by building upon HydraR (https://github.com/APAF-bioinformatics/HydraR), a package dedicated to the reproducibility of agentic systems. In particular, **we aim to develop a comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions, and a robust environment management system for isolating agents from the host environment**. These systems will equip computational biologists with tools for developing production-grade agentic systems, enabling automated retries, reduced redundancy, and safe execution within sensitive research environments. Critically, HydraR will provide an agent-agnostic framework that can integrate with any existing or future agent orchestration package, thereby transforming HydraR into an infrastructure hub for the next generation of agentic tools.
 
 ## Details
 
@@ -16,7 +16,8 @@ To develop a comprehensive memory and state management system for logging epheme
 
 #### Rationale
 
-Agent memory is often ephemeral and untraceable, making it difficult to capture and audit the entire "journey" of an agentic workflow. Currently, HydraR uses DuckDB to maintain a central memory system that continuously saves workflow checkpoints, ensuring a complete, verifiable record of all AI interactions and data changes. Despite this, **HydraR does not support specialized features required for production-grade bioinformatic pipelines**, such as automated retries for failed tasks, execution caching for reducing redundant computations, and agent output validation for workflow resilience.
+Agent memory is often ephemeral and untraceable, making it difficult to capture and audit the entire "journey" of an agentic workflow. While HydraR uses DuckDB for continuous checkpointing and verifiable records, **it currently lacks specialized features required for production-grade bioinformatic pipelines**, such as automated retries, execution caching, and agent output validation for workflow resilience.
+
 
 #### Approach
 
@@ -36,7 +37,7 @@ To develop a robust environment management system for isolating agents from the 
 
 #### Rationale
 
-Granting autonomous agents unchecked access to sensitive research environments can be dangerous as their actions can inadvertently lead to file modifications, deletions, or corruption of the working directory. Unrestricted access to the working directory also makes it difficult for parallelised agents to work on the same task without overwriting each other's work, which is a major hurdle for scaling agentic workflows. However, **HydraR does not enforce filesystem and runtime isolation and therefore lacks the capabilities to safely and securely orchestrate agentic workflows**, thereby posing a significant barrier to the adoption of agentic systems in R-based research.
+Granting autonomous agents unchecked agent access to research environments risks unintended file modifications, deletions, or corruption of the working directory. Unrestricted access to the working directory also makes it difficult for parallelised agents to work on the same task without overwriting each other's work, hindering scalability. Currently, **HydraR does not enforce filesystem and runtime isolation, lacking the capabilities to safely and securely orchestrate agentic workflows**, which impedes the adoption of agentic systems in R.
 
 #### Approach
 
