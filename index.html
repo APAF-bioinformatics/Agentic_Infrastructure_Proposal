@@ -5148,7 +5148,8 @@ z-index: 1000;
 
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
-<p>Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, with simple chatbots evolving into autonomous “agents” that can plan and execute complex tasks, and powerful multi-agent systems that collaborate to solve multi-faceted problems. This transformation holds immense potential for data science fields like bioinformatics, where such systems can automate workflows that previously demanded extensive computational expertise. Despite this, the R ecosystem currently lacks the necessary infrastructure to define, run, and share agentic workflows in a way that is reproducible and safe in practice. While our HydraR package provides a foundational proof-of-concept for orchestrating AI agents in R, significant development is needed to transform it into a robust framework capable of supporting the reliable workflows required by a broader scientific community. In this project, we address this need by extending on the core components of HydraR. Specifically, we will pursue two distinct objectives towards enabling truly reproducible and secure agentic orchestration. First, we aim to develop a comprehensive memory and state management system that incorporates features including automated retries, execution caching, and output validation to enhance workflow resilience and reduce redundant computations. Second, we aim to develop a robust environment management system that integrates with isolation tools such as Git worktree and Docker, ensuring agents can execute safely within protected research environments. By delivering these capabilities, this project will elevate HydraR into a flexible, agent-agnostic framework that empowers computational biologists to confidently define, run, resume, validate, and share AI-assisted workflows, thereby upholding the rigor and reproducibility of R-based scientific research.</p>
+<p>Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, with simple chatbots evolving into autonomous “agents” that can plan and execute complex tasks, and powerful multi-agent systems that collaborate to solve multi-faceted problems. This transformation holds immense potential for data science fields like bioinformatics, where such systems can automate workflows that previously demanded extensive computational expertise. Despite this, the R ecosystem currently lacks the necessary infrastructure to define, run, and share agentic workflows in a way that is reproducible and safe in practice. While our HydraR package provides a foundational proof-of-concept for orchestrating AI agents in R, significant development is needed to transform it into a robust framework capable of supporting the reliable workflows required by a broader scientific community.</p>
+<p>In this project, we address this need by extending on the core components of HydraR. Specifically, we will pursue two distinct objectives towards enabling truly reproducible and secure agentic orchestration. First, we aim to develop a comprehensive memory and state management system that incorporates features including automated retries, execution caching, and output validation to enhance workflow resilience and reduce redundant computations. Second, we aim to develop a robust environment management system that integrates with isolation tools such as Git worktree and Docker, ensuring agents can execute safely within protected research environments. By delivering these capabilities, this project will elevate HydraR into a flexible, agent-agnostic framework that empowers computational biologists to confidently define, run, resume, validate, and share AI-assisted workflows, thereby upholding the rigor and reproducibility of R-based scientific research.</p>
 <section id="budget" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="budget"><span class="header-section-number">1.1</span> Budget</h2>
 <p>We request <strong>$14,400 USD</strong> in funding for an expert software developer to work on this project over a 7-week period (approximately 245 hours).</p>
@@ -5193,9 +5194,9 @@ z-index: 1000;
 </section>
 <section id="the-problem" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> The Problem</h1>
-<p>Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous “agents” that can plan and execute complex tasks previously requiring computational expertise, and into powerful multi-agent systems where a team of AI agents can autonomously collaborate to tackle multi-faceted problems. By democratizing access to these sophisticated multi-agent systems, this automation not only accelerates biological discovery but also empowers the broader scientific community to harness high-performance workflows once restricted to deep domain specialists.</p>
+<p>Large Language Models (LLMs) are catalyzing a paradigm shift in scientific computing, fundamentally transforming how research is performed. This transformation is particularly evident in the field of bioinformatics, where LLMs have evolved beyond simple chatbots into autonomous “agents” that can plan and execute complex tasks previously requiring computational expertise, and into powerful multi-agent systems where a team of AI agents can autonomously collaborate to tackle multi-faceted problems. By democratizing access to these sophisticated multi-agent systems, this automation not only empowers the broader scientific community to harness high-performance workflows once restricted to deep domain specialists but also accelerates biological discovery.</p>
 <p>Yet despite offering many great benefits, <strong>the current R ecosystem lacks the necessary framework for traceable, stateful, and secure agent orchestration</strong>. R packages like <code>ellmer</code> and <code>mall</code> provide excellent interfaces but fail to record agent decisions, making the process ephemeral and untraceable. Meanwhile, advanced frameworks such as <code>LangGraph</code> and <code>AutoGen</code> in the Python ecosystem lack the necessary features for auditable agent orchestration, rendering them unsuitable for R-based research via Python-based bridges (i.e., <code>reticulate</code>). Moreover, granting autonomous agents unchecked access to research environments can inadvertently lead to unwanted file modifications, deletions, or corruption of the working directory. While packages such as <code>LLMagentR</code> and <code>puppeteeR</code> enable multi-agent orchestration and state management, <code>puppeteeR</code> lacks restart from checkpoint capabilities and both <code>LLMagentR</code> and <code>puppeteeR</code> do not implement environment isolation for agents. Thus, to safeguard the integrity of R-based research, a robust framework must exist to support the development and reproducible use of agentic systems.</p>
-<p><strong>To address this critical gap in the R ecosystem, this project will build on HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems</strong>. Specifically, we aim to develop:</p>
+<p>To address the current limitations in the R ecosystem, we developed HydraR, an existing R package dedicated to the scientific reproducibility of agentic systems. <strong>While HydraR provides the foundational proof-of-concept for orchestrating AI agents in R, significant development is needed to transform it into a robust framework capable of supporting the reliable workflows required by a broader scientific community</strong>. Specifically, this project will build on HydraR and aims to develop:</p>
 <ol type="1">
 <li>A comprehensive memory and state management system for logging ephemeral agent reasoning and agent interactions.</li>
 <li>A robust environment management system for isolating agents from the host environment.</li>
@@ -5307,23 +5308,23 @@ z-index: 1000;
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">gantt
-    title HydraR 10-Week Development Timeline
+    title HydraR 7-Week Development Timeline
     dateFormat  YYYY-MM-DD
     axisFormat  %m/%y
     
     section Memory and State Management
-    Restart Checkpointing                   :active, dev1, 2026-07-07, 6d
-    Intelligent Hashing and State Retrieval :dev2, after dev1, 6d
-    Dynamic Network Repair &amp; Validation     :dev3, after dev2, 6d
+    Restart Checkpointing                   :active, dev1, 2026-07-07, 7d
+    Intelligent Hashing and State Retrieval :dev2, after dev1, 7d
+    Dynamic Network Repair &amp; Validation     :dev3, after dev2, 7d
 
     section Environment Management
-    Docker Layer                            :dev4, after dev3, 6d
-    Integration of Git worktree with Docker :dev5, after dev4, 6d
-    Singularity &amp; Apptainer                 :dev6, after dev5, 6d
+    Docker Layer                            :dev4, after dev3, 7d
+    Integration of Git worktree with Docker :dev5, after dev4, 7d
+    Singularity &amp; Apptainer                 :dev6, after dev5, 7d
     
     section Validation &amp; Community Management
-    Agents &amp; Skills Management              :dev7, after dev6, 6d
-    Documentation &amp; Release                 :dev8, after dev7, 6d
+    Agents &amp; Skills Management              :dev7, after dev6, 7d
+    Documentation &amp; Release                 :dev8, after dev6, 7d
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -5334,7 +5335,7 @@ z-index: 1000;
 <section id="other-aspects" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="other-aspects"><span class="header-section-number">5.3</span> Other Aspects</h2>
 <ul>
-<li><strong>Hosting</strong>: Code will be hosted on GitHub under the <code>APAF-bioinformatics</code> organization.</li>
+<li><strong>Hosting</strong>: Code will continue to be hosted on GitHub under the <code>APAF-bioinformatics</code> organization.</li>
 <li><strong>Conference</strong>: We will attend and present HydraR at relevant conferences to engage with the bioinformatics community.</li>
 <li><strong>Social media</strong>: We will utilize social media to engage with the bioinformatics community.</li>
 <li><strong>Publicity</strong>: We will share quarterly updates on the R Consortium blog.</li>
