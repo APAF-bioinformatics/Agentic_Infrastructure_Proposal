@@ -22,5 +22,6 @@
 
 - **rOpenSci Editorial Board**: Initial discussions regarding HydraR's role in the AI-R ecosystem.
 - **Macquarie University**: Consulted on the impact of agentic orchestration for national-scale omics infrastructure.
+- **Ben Goudey**: AI Technical Lead at Australian BioCommons.
 - **Henrik Bengtsson**: Consulted on HydraR package design and package infrastructure.
 - **Jeroen Ooms**: Consulted on HydraR package design and package infrastructure.

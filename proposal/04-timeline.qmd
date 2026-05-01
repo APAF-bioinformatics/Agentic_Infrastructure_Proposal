@@ -14,8 +14,8 @@ The proposed work will be delivered over a 7-week period and involve approximate
   * Development of agent validation and recovery system.
 
 * **Phase 2: Environment Management (Weeks 4-6)**:
-  * Integration with Git worktree.
-  * Integration with Docker integration.
+  * Development of Docker layer.
+  * Integration of Git worktree with Docker.
   * Compatibility for Singularity/Apptainer.
 
 * **Phase 3: Validation & Community Management (Week 7)**:
@@ -26,7 +26,7 @@ The proposed work will be delivered over a 7-week period and involve approximate
 
 ## Other Aspects
 
-* **Hosting**: Code will be hosted on GitHub under the `APAF-bioinformatics` organization.
+* **Hosting**: Code will continue to be hosted on GitHub under the `APAF-bioinformatics` organization.
 * **Conference**: We will attend and present HydraR at relevant conferences to engage with the bioinformatics community.
 * **Social media**: We will utilize social media to engage with the bioinformatics community. 
 * **Publicity**: We will share quarterly updates on the R Consortium blog.

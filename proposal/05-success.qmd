@@ -6,7 +6,7 @@ The success of the HydraR infrastructure project will be measured by its adoptio
 
 * **Package Adoption**: At least 3 existing R/Bioconductor packages demonstrating "Skill Node" integration via the HydraR manifest protocol.
 * **Reliability Benchmark**: A published reproducible benchmark dataset showing a >20% improvement in agent task completion rates when using HydraR state management vs. stateless alternatives.
-* **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model. We will seek to demonstrate the tool via online webinars or community user groups hosted by the Australian BioCommons (https://www.biocommons.org.au/), local workshops hosted by APAF and Macquarie University and as submitted abstract at relevant bioinformatics and proteomics conferences.
+* **Community Engagement**: Successful completion of the rOpenSci peer-review process and transition to a community-maintained model. We will seek to demonstrate the tool via online hosted by the Australian BioCommons, local workshops hosted by APAF and as submitted abstract at relevant bioinformatics conferences.
 * **CRAN/Bioconductor Presence**: Maintain the 0-error/warning/note status across all major R versions.
 
 ## Definition of Done
@@ -23,8 +23,8 @@ The project will be considered successful upon the delivery of:
 We will use the following markers to track our progress:
 
 * **Week 2**: Completion of the DuckDB backend and successful hashing of R objects in a session.
-* **Week 4**: Completion of agent validation and integration with Git worktree.
-* **Week 6**: Completion of integration with Docker and compatibility for Singularity/Apptainer
+* **Week 4**: Completion of agent validation and Docker layer.
+* **Week 6**: Completion of integration of Git worktree with Docker and compatibility for Singularity/Apptainer
 * **Week 7**: Successful community beta-test with at least 5 bioinformatics researchers and final project report and publication of the demonstration blog post on the R Consortium website.
 
 ## Future work
